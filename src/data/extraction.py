@@ -134,6 +134,10 @@ def process_impermeabilite(dataset_id, tmp_folder, output_folder, communes_file,
 
 def process_etp(dataset_id, tmp_folder, output_folder, name, maille_file):
 
+    if already_exists(f"{output_folder}/{name}.parquet"):
+        print(f"[SKIP] ETP déjà présentes")
+        return
+    
     folder = f"{tmp_folder}/{name}"
     ensure_dir(folder)
 
@@ -146,10 +150,6 @@ def process_etp(dataset_id, tmp_folder, output_folder, name, maille_file):
     maille_xy = maille_df[["lambx", "lamby", "lat_dg", "lon_dg"]]
 
     dfs = []
-
-    if already_exists(f"{output_folder}/{name}.csv"):
-        print(f"[SKIP] ETP déjà présentes")
-        return
 
     for file in files:
         df = read_csv_flexible(file)
@@ -168,17 +168,22 @@ def process_etp(dataset_id, tmp_folder, output_folder, name, maille_file):
                 how="inner"
             )
 
-        dfs.append(df)
+            df["time"] = pd.to_datetime(df["DATE"].astype(str), format="%Y%m%d")
+            df["month"] = df["time"].dt.to_period("M")
+            agg = df.groupby(["lat_dg", "lon_dg", "month"]).agg({"ETP_Q_H0175": "sum"}).reset_index()
+            dfs.append(agg)
 
     if not dfs:
         print("❌ Aucun fichier ETP")
         return
 
-    df = pd.concat(dfs, ignore_index=True)
-    df = df[["DATE", "ETP_Q_H0175", "lat_dg", "lon_dg"]].sort_values("DATE")
+    df = pd.concat(dfs).groupby(["lat_dg", "lon_dg", "month"]).agg({"ETP_Q_H0175": "sum"}).reset_index()
+    df["time"] = df["month"].dt.to_timestamp()
 
-    out = f"{output_folder}/{name}.csv"
-    df.to_csv(out, sep=";", index=False)
+    df = df.drop(columns=["month"]).rename(columns={"lat_dg": "lat", "lon_dg": "lon", "ETP_Q_H0175": "ETP_Q"})
+
+    out = f"{output_folder}/{name}.parquet"
+    df.to_parquet(out, index=False)
 
     print(f"✔ {name} : {len(df)} lignes")
 

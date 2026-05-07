@@ -2,7 +2,7 @@ import pandas as pd
 from scipy.spatial import cKDTree
 import numpy as np
 import os
-from clusterisation import classifier_par_duree, classifier_par_consecutif
+from data.clusterisation import classifier_par_duree, classifier_par_consecutif
 
 def nearest_point_valid(df_points, df_target, value_column):
     df_valid = df_points.dropna(subset=[value_column])
@@ -35,25 +35,7 @@ def load_meteo(path, methode="sum"):
 
 
 def load_etp(path):
-    df = pd.read_csv(path, sep=";")
-
-    df["time"] = pd.to_datetime(df["DATE"].astype(str), format="%Y%m%d")
-
-    df = df.rename(columns={
-        "lat_dg": "lat",
-        "lon_dg": "lon",
-        "ETP_Q_H0175": "ETP_Q"
-    })
-
-    df["month"] = df["time"].dt.to_period("M")
-
-    df_month = df.groupby(["lat", "lon", "month"]).agg({
-        "ETP_Q": "sum"
-    }).reset_index()
-
-    df_month["time"] = df_month["month"].dt.to_timestamp()
-
-    return df_month.drop(columns=["month"])
+    return pd.read_parquet(path)
 
 
 def load_imperm(path):
@@ -160,7 +142,7 @@ def save_output(df, output_folder):
 if __name__ == "__main__":
     
     FICHIER_METEO = "../../data/extraction/meteo.csv"
-    FICHIER_ETP = "../../data/extraction/etp.csv"
+    FICHIER_ETP = "../../data/extraction/etp.parquet"
     FICHIER_IMPERM = "../../data/extraction/impermeabilite.csv"
     DOSSIER_NAPPE = "../../data/extraction/nappes/"
     OUTPUT_FOLDER = "../../data/fusion"

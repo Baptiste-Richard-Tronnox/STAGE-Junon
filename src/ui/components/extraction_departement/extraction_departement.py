@@ -116,6 +116,8 @@ class SpeedometerWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self._value = 0
+        self._color_start = "#89b4fa"
+        self._color_end = "#a6e3a1"
         self.setFixedSize(180, 180)
 
     def set_value(self, v: int):
@@ -150,9 +152,11 @@ class SpeedometerWidget(QWidget):
         # Arc de progression
         if self._value > 0:
             t = self._value / 100
-            r = int(0x89 + (0xa6 - 0x89) * t)
-            g = int(0xb4 + (0xe3 - 0xb4) * t)
-            b = int(0xfa + (0xa1 - 0xfa) * t)
+            r1, g1, b1 = int(self._color_start[1:3], 16), int(self._color_start[3:5], 16), int(self._color_start[5:7], 16)
+            r2, g2, b2 = int(self._color_end[1:3], 16), int(self._color_end[3:5], 16), int(self._color_end[5:7], 16)
+            r = int(r1 + (r2 - r1) * t)
+            g = int(g1 + (g2 - g1) * t)
+            b = int(b1 + (b2 - b1) * t)
             pen = QPen(QColor(r, g, b), 12, Qt.SolidLine, Qt.RoundCap)
             painter.setPen(pen)
             span = int(self._value * SPAN / 100)
@@ -277,9 +281,14 @@ class ExtractionDepartement(QWidget):
         self.btn_fuse.setEnabled(False)
         self.btn_extract.setEnabled(False)
 
+        self.speedometer._color_start = "#89dceb"
+        self.speedometer._color_end = "#74c7ec"
+        self.speedometer.set_value(10)
+
         self._worker = FusionWorker(self.dept, self.config)
         self._thread = QThread()
         self._worker.moveToThread(self._thread)
+        self._worker.progress.connect(self.speedometer.set_value, Qt.QueuedConnection)
 
         self._thread.started.connect(self._worker.run)
         self._worker.log.connect(self._on_log)
@@ -344,9 +353,11 @@ class FusionWorker(QObject):
                 names=names,
                 methodes=methodes,
                 nb_an_cons=d.get("qualite_continue"),
-                nb_an_tot=d.get("qualite_total")
+                nb_an_tot=d.get("qualite_total"),
+                emit=self.progress
             )
             self.finished.emit()
+            self.progress.emit(100)
 
         except Exception as e:
             self.error.emit(str(e))

@@ -3,7 +3,7 @@ from PySide6.QtWidgets import (
     QPushButton, QLineEdit, QCheckBox, QSpinBox, QLabel,
     QScrollArea, QFrame, QGroupBox, QFileDialog, QComboBox
 )
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import Qt, Signal, QThread, QObject
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor
 import os
 import toml
@@ -12,6 +12,35 @@ import toml
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
 
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "img")
+
+class CleanThread(QThread):
+    success = Signal()
+    error = Signal(str)
+
+    def __init__(self, paths):
+        super().__init__()
+        self.paths = paths
+
+    def run(self):
+        import shutil
+        errors = []
+        for path in self.paths:
+            if not os.path.exists(path):
+                continue
+            try:
+                for f in os.listdir(path):
+                    fp = os.path.join(path, f)
+                    if os.path.isfile(fp):
+                        os.remove(fp)
+                    elif os.path.isdir(fp):
+                        shutil.rmtree(fp)
+            except Exception as e:
+                errors.append(f"{path}: {e}")
+
+        if errors:
+            self.error.emit("\n".join(errors))
+        else:
+            self.success.emit()
 
 class Configuration(QWidget):
 
@@ -441,7 +470,6 @@ class Configuration(QWidget):
 
     def _clean(self, dossier_keys: list, label: str):
         from PySide6.QtWidgets import QMessageBox
-        import shutil
 
         cfg = {}
         if os.path.exists(CONFIG_PATH):
@@ -459,37 +487,56 @@ class Configuration(QWidget):
             QMessageBox.warning(self, "Nettoyage", "Aucun chemin configuré pour cette étape.")
             return
 
-        msg = "Supprimer les fichiers dans :\n" + "\n".join(f"  • {p}" for p in paths) + "\n\nCette action est irréversible."
-        reply = QMessageBox.question(self, f"Nettoyer — {label}", msg,
-                                    QMessageBox.Yes | QMessageBox.No)
-        if reply != QMessageBox.Yes:
-            return
+        sender_btn = self.sender()
+        if sender_btn:
+            sender_btn.setEnabled(False)
+            sender_btn.setText("Suppression...")
 
-        errors = []
-        for path in paths:
-            if not os.path.exists(path):
-                continue
-            try:
-                for f in os.listdir(path):
-                    fp = os.path.join(path, f)
-                    if os.path.isfile(fp):
-                        os.remove(fp)
-                    elif os.path.isdir(fp):
-                        shutil.rmtree(fp)
-            except Exception as e:
-                errors.append(f"{path}: {e}")
+        self._thread = CleanThread(paths)
+        self._thread.success.connect(lambda: self._on_clean_done(sender_btn, label, None))
+        self._thread.error.connect(lambda err: self._on_clean_done(sender_btn, label, err))
+        self._thread.start()
 
-        if errors:
-            QMessageBox.critical(self, "Erreur", "\n".join(errors))
+    def _on_clean_done(self, btn, label, error):
+        from PySide6.QtWidgets import QMessageBox
+
+        if btn:
+            btn.setEnabled(True)
+            btn.setText(f"Supprimer {label.lower()}")
+
+        msg = QMessageBox(self)
+        msg.setStyleSheet("""
+            QMessageBox {
+                background-color: #1e1e2e;
+                color: #cdd6f4;
+            }
+            QMessageBox QLabel {
+                color: #cdd6f4;
+                font-size: 13px;
+            }
+            QPushButton {
+                background-color: #89b4fa;
+                color: #1e1e2e;
+                font-weight: bold;
+                border-radius: 6px;
+                padding: 6px 20px;
+                min-width: 60px;
+            }
+            QPushButton:hover {
+                background-color: #b4befe;
+            }
+        """)
+
+        if error:
+            msg.setIcon(QMessageBox.Critical)
+            msg.setWindowTitle("Erreur")
+            msg.setText(error)
         else:
-            QMessageBox.information(self, "Nettoyage", f"{label} nettoyé avec succès.")
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Nettoyage")
+            msg.setText(f"{label} nettoyé avec succès.")
 
-        # Notifie les autres pages
-        if os.path.exists(CONFIG_PATH):
-            try:
-                self.config_saved.emit(toml.load(CONFIG_PATH))
-            except Exception:
-                pass
+        msg.exec()
 
     def _save_config(self):
         types = []
