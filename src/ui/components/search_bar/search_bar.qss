@@ -1,4 +1,0 @@
-/* Styles pour SearchBar */
-QWidget#SearchBar {
-    background-color: transparent;
-}

@@ -49,7 +49,7 @@ def extraction(output_folder, tmp_folder, departements, names):
         departements=departements
     )
 
-def fusion(output_folder,input_folder, names, methodes):
+def fusion(output_folder,input_folder, names, methodes, nb_an_tot=None, nb_an_cons=None):
     os.makedirs(output_folder, exist_ok=True)
 
     print(f"[CHARGEMENT] {input_folder}/{names["meteo_name_extraction"]}.csv")
@@ -66,11 +66,13 @@ def fusion(output_folder,input_folder, names, methodes):
     fichiers_csv = [f for f in os.listdir(f"{input_folder}/{names["nappe_name_extraction"]}") if f.endswith(".csv")]
 
     for i, fichier in enumerate(fichiers_csv, start=1):
+
         filepath = os.path.join(f"{input_folder}/{names["nappe_name_extraction"]}", fichier)
 
         print(f"[TRAITEMENT][{i}/{total}]", filepath)
 
-        nappe_month = process_nappe_file(filepath, meteo, etp, imperm)
+        nappe_month = process_nappe_file(filepath, meteo, etp, imperm, nb_an_tot, nb_an_cons)
+
         save_output(nappe_month, output_folder)
 
 def clusterisations(input_folder, dossier_nappe_inertielle, dossier_nappe_reactive):

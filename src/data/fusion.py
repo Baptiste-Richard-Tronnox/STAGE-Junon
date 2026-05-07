@@ -2,6 +2,7 @@ import pandas as pd
 from scipy.spatial import cKDTree
 import numpy as np
 import os
+from clusterisation import classifier_par_duree, classifier_par_consecutif
 
 def nearest_point_valid(df_points, df_target, value_column):
     df_valid = df_points.dropna(subset=[value_column])
@@ -135,10 +136,15 @@ def merge_spatial_data(nappe_month, meteo, etp, imperm):
 
     return nappe_month
 
-def process_nappe_file(filepath, meteo, etp, imperm):
+def process_nappe_file(filepath, meteo, etp, imperm, nb_an_tot=None, nb_an_cons=None):
 
     nappe = pd.read_csv(filepath, sep=";")
     nappe_month = preprocess_nappe(nappe)
+
+    if nb_an_tot is not None and classifier_par_duree(nappe_month, col="niveau_nappe_eau")[nb_an_tot]>0:
+        return None
+    if nb_an_cons is not None and classifier_par_consecutif(nappe_month, col="niveau_nappe_eau")[nb_an_cons]>0:
+        return None
 
     nappe_month = merge_spatial_data(nappe_month, meteo, etp, imperm)
 

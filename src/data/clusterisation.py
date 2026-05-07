@@ -58,10 +58,10 @@ def classifier_par_consecutif(df, col="niveau_nappe_eau"):
     grouped = df.groupby("code_bss")
     
     resultats = {
-        ">30 ans": 0,
-        ">20 ans": 0,
-        ">10 ans": 0,
-        "<10 ans": 0
+        30: 0,
+        20: 0,
+        10: 0,
+        0: 0
     }
     
     for _, group in grouped:
@@ -84,13 +84,13 @@ def classifier_par_consecutif(df, col="niveau_nappe_eau"):
                 current_streak = 1
 
         if max_streak > 30:
-            resultats[">30 ans"] += 1
+            resultats[30] += 1
         elif max_streak > 20:
-            resultats[">20 ans"] += 1
+            resultats[20] += 1
         elif max_streak > 10:
-            resultats[">10 ans"] += 1
+            resultats[10] += 1
         else:
-            resultats["<10 ans"] += 1
+            resultats[0] += 1
 
     
     return resultats

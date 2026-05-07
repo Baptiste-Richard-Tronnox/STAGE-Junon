@@ -1,4 +1,127 @@
-/* Styles pour VisualisationCarte */
-QWidget#VisualisationCarte {
+/* ===== TOPBAR ===== */
+QWidget#carte_topbar {
+    background-color: #181825;
+    border-bottom: 1px solid #313244;
+}
+
+/* ===== BOUTON FILTRE ===== */
+QPushButton#btn_filter {
+    background-color: #1e1e2e;
+    color: #89b4fa;
+    border: 1px solid #313244;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+QPushButton#btn_filter:hover {
+    background-color: #313244;
+    border: 1px solid #89b4fa;
+    color: #cdd6f4;
+}
+
+QPushButton#btn_filter:pressed {
+    background-color: #45475a;
+}
+
+/* ===== MENU ===== */
+QMenu#dept_menu {
+    background-color: #1e1e2e;
+    border: 1px solid #313244;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+/* Actions (Tout sélectionner etc) */
+QMenu#dept_menu::item {
     background-color: transparent;
+    color: #cdd6f4;
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin: 2px 4px;
+}
+
+QMenu#dept_menu::item:selected {
+    background-color: #313244;
+}
+
+/* Séparateur */
+QMenu#dept_menu::separator {
+    background-color: #313244;
+    height: 1px;
+    margin: 6px 8px;
+}
+
+/* ===== CHECKBOX (départements) ===== */
+QCheckBox#dept_checkbox {
+    color: #bac2de;
+    font-size: 12px;
+    spacing: 8px;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+QCheckBox#dept_checkbox:hover {
+    background-color: #313244;
+}
+
+/* carré */
+QCheckBox#dept_checkbox::indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    border: 1px solid #45475a;
+    background-color: #181825;
+}
+
+/* checked */
+QCheckBox#dept_checkbox::indicator:checked {
+    background-color: #89b4fa;
+    border: 1px solid #89b4fa;
+}
+
+/* ===== SCROLL ===== */
+QScrollArea {
+    background: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #45475a;
+    border-radius: 3px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #89b4fa;
+}
+
+QPushButton#btn_filter {
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid #313244;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+QPushButton#btn_filter:hover {
+    background-color: rgba(49, 50, 68, 0.95);
+    border: 1px solid #89b4fa;
+}
+
+QPushButton#btn_filter:pressed {
+    background-color: #45475a;
+}
+
+QLabel#menu_section_label {
+    color: #6c7086;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 8px 2px 8px;
 }

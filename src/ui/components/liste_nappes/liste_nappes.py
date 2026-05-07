@@ -39,8 +39,12 @@ class ListeNappes(QWidget):
         self.list_widget.currentItemChanged.connect(self._on_item_changed)
         layout.addWidget(self.list_widget)
 
+        self.list_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.list_widget.setWordWrap(True)
+
     def load_nappes(self, folders: list):
         self._all_items.clear()
+        self._coords_cache = {}   # filepath -> (lat, lon)
         self.list_widget.clear()
 
         for folder in folders:
@@ -54,7 +58,66 @@ class ListeNappes(QWidget):
                 name     = f.replace(".csv", "")
                 self._all_items.append((name, filepath, nappe_type))
 
+                # Cache des coordonnées
+                try:
+                    import pandas as pd
+                    df   = pd.read_csv(filepath, sep=";", nrows=5)
+                    df_v = df[["lat", "lon"]].dropna() if "lat" in df.columns and "lon" in df.columns else pd.DataFrame()
+                    if not df_v.empty:
+                        self._coords_cache[filepath] = (
+                            float(df_v["lat"].iloc[0]),
+                            float(df_v["lon"].iloc[0])
+                        )
+                except Exception:
+                    pass
+
         self._render_items(self._all_items)
+
+    def apply_filter(self, dept_actifs: set, types_actifs: set):
+        """Filtre la liste selon les départements actifs et les types autorisés."""
+        try:
+            from shapely.geometry import Point, shape
+            # Récupère les polygones depuis la carte si dispo
+            has_shapely = True
+        except ImportError:
+            has_shapely = False
+
+        filtered = []
+        for name, filepath, nappe_type in self._all_items:
+            # Filtre par type
+            if nappe_type not in types_actifs:
+                continue
+
+            # Filtre géographique si on a shapely et les features
+            if has_shapely and hasattr(self, "_geo_features") and self._geo_features:
+                try:
+                    import pandas as pd
+                    from shapely.geometry import Point, shape
+                    df = pd.read_csv(filepath, sep=";", nrows=5)
+                    df_v = df[["lat", "lon"]].dropna()
+                    if df_v.empty:
+                        continue
+                    lat = float(df_v["lat"].iloc[0])
+                    lon = float(df_v["lon"].iloc[0])
+                    pt  = Point(lon, lat)
+                    active_features = [f for f in self._geo_features
+                                    if self._get_dept_id(f) in dept_actifs]
+                    if not any(shape(f["geometry"]).contains(pt) for f in active_features):
+                        continue
+                except Exception:
+                    pass
+
+            filtered.append((name, filepath, nappe_type))
+
+        search = self.search.text()
+        if search:
+            filtered = [(n, fp, t) for n, fp, t in filtered if search.lower() in n.lower()]
+
+        self._render_items(filtered)
+
+    def _get_dept_id(self, feature: dict) -> str:
+        props = feature.get("properties", {})
+        return str(props.get("code", props.get("CODE_DEPT", props.get("num_dep", "")))).zfill(2)
 
     def _render_items(self, items):
         self.list_widget.clear()

@@ -17,22 +17,28 @@ def fetch_dataset_resources(dataset_id:str):
     resp.raise_for_status()
     return resp.json().get("resources", [])
 
+def already_exists(path: str) -> bool:
+    return os.path.exists(path) and os.path.getsize(path) > 0
 
-def download_files(resources, dest_folder, formats=("csv",), filename=None):
+def download_files(resources, dest_folder, formats=("csv",), filename=None, skip_existing=True):
     files = []
+
+    ensure_dir(dest_folder)
 
     for r in resources:
         url = r.get("url")
         fmt = r.get("format", "").lower()
 
         if fmt in formats:
-            # Si un nom est fourni → on l'utilise, sinon nom original
-            if filename:
-                final_name = filename
-            else:
-                final_name = url.split("/")[-1]
 
+            final_name = filename if filename else url.split("/")[-1]
             filepath = os.path.join(dest_folder, final_name)
+
+            # 🔥 CACHE CHECK
+            if skip_existing and already_exists(filepath):
+                print(f"[SKIP] déjà présent : {filepath}")
+                files.append(filepath)
+                continue
 
             print(f"[DOWNLOAD] {url}")
             resp = requests.get(url)
@@ -141,6 +147,10 @@ def process_etp(dataset_id, tmp_folder, output_folder, name, maille_file):
 
     dfs = []
 
+    if already_exists(f"{output_folder}/{name}.csv"):
+        print(f"[SKIP] ETP déjà présentes")
+        return
+
     for file in files:
         df = read_csv_flexible(file)
 
@@ -201,9 +211,19 @@ def process_meteo(dataset_id, tmp_folder, output_folder, name, departements):
         df = pd.read_csv(file, sep=";", compression="gzip")
         dfs.append(df)
 
-    df = pd.concat(dfs, ignore_index=True)
+    new_df = pd.concat(dfs, ignore_index=True)
 
     out = f"{output_folder}/{name}.csv"
+
+    if os.path.exists(out):
+        print("📂 Fichier existant détecté, fusion...")
+
+        existing_df = pd.read_csv(out, sep=";")
+
+        df = pd.concat([existing_df, new_df], ignore_index=True)
+    else:
+        df = new_df
+
     df.to_csv(out, sep=";", index=False)
 
     print(f"✔ {name} : {len(df)} lignes")
@@ -276,27 +296,35 @@ def process_nappe(output_folder, name, departements):
     print(f"✔ {name} : {len(codes)} lignes")
 
 
-def download_communes_csv(dest_folder: str, name:str = "communes"):
+def download_communes_csv(dest_folder: str, name: str = "communes"):
     ensure_dir(dest_folder)
 
-    # Identifiant du dataset (dataset id sur data.gouv.fr)
+    path = f"{dest_folder}/{name}.csv"
+
+    if already_exists(path):
+        print(f"[SKIP] communes déjà présentes")
+        return
+
     dataset_id = "6769a388c3b64f95ea639e27"
-
-    # Récupération des ressources via la fonction existante
     resources = fetch_dataset_resources(dataset_id)
-
-    # Télécharger uniquement les fichiers CSV
     download_files(resources, dest_folder, formats=("csv",), filename=f"{name}.csv")
 
-def download_maille_csv(folder:str, name:str = "maille"):
+def download_maille_csv(folder: str, name: str = "maille"):
+    ensure_dir(folder)
+
+    path = f"{folder}/{name}.csv"
+
+    if already_exists(path):
+        print(f"[SKIP] maille déjà présente")
+        return
+
     url = "https://donneespubliques.meteofrance.fr/client/document/metadonnees_swi_276.csv"
     print(f"[DOWNLOAD] {url}")
-    df = pd.read_csv(url, sep=";", skiprows=4)
 
+    df = pd.read_csv(url, sep=";", skiprows=4)
     df.columns = df.columns.str.replace("#", "").str.strip()
 
-    # Sauvegarde propre
-    df.to_csv(f"{folder}/{name}.csv", sep=";", index=False)
+    df.to_csv(path, sep=";", index=False)
 
 
 if __name__ == "__main__":

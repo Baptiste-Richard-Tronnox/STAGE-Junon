@@ -208,3 +208,22 @@ QScrollBar::add-line:vertical,
 QScrollBar::sub-line:vertical {
     height: 0;
 }
+
+QPushButton#btn_danger {
+    background-color: transparent;
+    color: #f38ba8;
+    border: 1px solid #f38ba8;
+    border-radius: 6px;
+    padding: 6px 14px;
+}
+
+QPushButton#btn_danger:hover {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+QLabel#clean_path_label {
+    color: #6c7086;
+    font-size: 11px;
+    font-family: "Consolas", monospace;
+}

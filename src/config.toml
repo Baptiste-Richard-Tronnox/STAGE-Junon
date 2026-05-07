@@ -20,7 +20,8 @@ dossier_scaler = "scaler"
 
 [pipeline]
 departements = [ 45, 46, 28,]
-qualite = 30
+qualite_continue = 1
+qualite_total = 5
 type = [ "reactive", "inertielle",]
 extraction = false
 fusion = true

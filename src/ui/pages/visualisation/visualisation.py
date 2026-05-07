@@ -109,7 +109,14 @@ class Visualisation(QWidget):
         self.stack.addWidget(self.visu_donnee)
         right_layout.addWidget(self.stack)
 
+        self.visu_carte.nappe_selected.connect(self._on_nappe_selected)
+        self.visu_carte.filter_changed.connect(self._on_filter_changed)
+
         root.addWidget(right)
+
+    def _on_filter_changed(self, dept_actifs: set, types_actifs: set):
+        self.liste_nappes._geo_features = self.visu_carte._geo_features
+        self.liste_nappes.apply_filter(dept_actifs, types_actifs)
 
     def _switch_view(self, index: int):
         self.stack.setCurrentIndex(index)
@@ -130,10 +137,6 @@ class Visualisation(QWidget):
         self.btn_carte.setStyle(self.btn_carte.style())
         self.btn_donnees.setStyle(self.btn_donnees.style())
 
-    def _on_nappe_selected(self, filepath: str):
-        self.visu_carte.highlight_nappe(filepath)
-        self.visu_donnee.load_nappe(filepath)
-
     def load_config_if_exists(self):
         if os.path.exists(CONFIG_PATH):
             try:
@@ -145,24 +148,23 @@ class Visualisation(QWidget):
         self.config = cfg
         d = cfg.get("dossier", {})
 
-        folder_in = d.get("dossier_nappe_inertielle", "data/clusterisation/inertielle")
-        folder_re = d.get("dossier_nappe_reactive",   "data/clusterisation/reactive")
+        folder_in    = d.get("dossier_nappe_inertielle", "data/clusterisation/inertielle")
+        folder_re    = d.get("dossier_nappe_reactive",   "data/clusterisation/reactive")
         folder_fusion = d.get("dossier_fusion", "data/fusion")
 
         def has_csv(folder):
-            return (
-                os.path.exists(folder) and
-                any(f.endswith(".csv") for f in os.listdir(folder))
-            )
+            return os.path.exists(folder) and any(f.endswith(".csv") for f in os.listdir(folder))
 
-        # Si clusterisation faite → on l'utilise, sinon → fusion
-        if has_csv(folder_in) or has_csv(folder_re):
-            folders = [folder_in, folder_re]
-        else:
-            folders = [folder_fusion]
+        folders = [folder_in, folder_re] if (has_csv(folder_in) or has_csv(folder_re)) else [folder_fusion]
 
+        self.visu_carte.load_config(cfg)          # ← charge le geojson + départements
         self.liste_nappes.load_nappes(folders)
         self.visu_carte.load_nappes(folders)
+
+    def _on_nappe_selected(self, filepath: str):
+        self.visu_carte.highlight_nappe(filepath)
+        self.visu_donnee.load_nappe(filepath)
+        self._switch_view(1)  # ← bascule automatiquement sur données au clic carte
 
     def _load_style(self):
         qss_path = os.path.join(os.path.dirname(__file__), "visualisation.qss")

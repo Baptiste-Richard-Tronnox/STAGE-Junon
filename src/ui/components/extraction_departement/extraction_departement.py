@@ -39,7 +39,6 @@ class ExtractionWorker(QObject):
             )
 
             d = self.config.get("dossier", {})
-            n = self.config
             names = {
                 "communes_name_extraction":      d.get("communes_name_extraction", "communes"),
                 "mailles_name_extraction":       d.get("mailles_name_extraction", "maille"),
@@ -94,7 +93,7 @@ class ExtractionWorker(QObject):
                 name=names["meteo_name_extraction"],
                 departements=[self.dept]
             )
-            cumulative += 20
+            cumulative += 10
             self.progress.emit(cumulative)
 
             self.log.emit(f"[{self.dept}] Traitement nappes...")
@@ -103,7 +102,7 @@ class ExtractionWorker(QObject):
                 name=names["nappe_name_extraction"],
                 departements=[self.dept]
             )
-            cumulative += 10
+            cumulative += 20
             self.progress.emit(cumulative)
 
             self.log.emit(f"[{self.dept}] ✓ Extraction terminée.")
@@ -343,7 +342,9 @@ class FusionWorker(QObject):
                 output_folder=d.get("dossier_fusion", "data/fusion"),
                 input_folder=d.get("dossier_extraction", "data/extraction"),
                 names=names,
-                methodes=methodes
+                methodes=methodes,
+                nb_an_cons=d.get("qualite_continue"),
+                nb_an_tot=d.get("qualite_total")
             )
             self.finished.emit()
 

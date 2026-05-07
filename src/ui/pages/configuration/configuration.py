@@ -4,12 +4,14 @@ from PySide6.QtWidgets import (
     QScrollArea, QFrame, QGroupBox, QFileDialog, QComboBox
 )
 from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor
 import os
 import toml
 
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
 
+IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "img")
 
 class Configuration(QWidget):
 
@@ -38,6 +40,7 @@ class Configuration(QWidget):
         self._build_tab_pipeline()
         self._build_tab_entrainement()
         self._build_tab_fusion_completion()
+        self._build_tab_nettoyage()
 
         # Boutons bas
         btn_row = QHBoxLayout()
@@ -58,6 +61,34 @@ class Configuration(QWidget):
         self.btn_cancel.clicked.connect(self._load_config)
         self.btn_cancel.setVisible(False)
         self._connect_change_signals()
+        self.tabs.currentChanged.connect(self._update_tab_icons)
+    
+    def _update_tab_icons(self):
+        icons = [
+            ("folder.svg"),
+            ("gear.svg"),
+            (),
+            ("list-check.svg"),
+            ("trash.svg"),
+        ]
+
+        for i in range(self.tabs.count()):
+            if i != 2 :
+                color = "#89b4fa" if i == self.tabs.currentIndex()else "#a6adc8"
+                icon_path = os.path.join(IMG_DIR, icons[i])
+                self.tabs.setTabIcon(i, self._colored_icon(icon_path, color))
+
+    def _colored_icon(self, icon_path, color="#a6adc8"):
+        if not os.path.exists(icon_path):
+            return QIcon()
+
+        pixmap = QPixmap(icon_path)
+        painter = QPainter(pixmap)
+        painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
+        painter.fillRect(pixmap.rect(), QColor(color))
+        painter.end()
+
+        return QIcon(pixmap)
     
     def _connect_change_signals(self):
         for widget in self.findChildren(QLineEdit):
@@ -120,10 +151,14 @@ class Configuration(QWidget):
         scroll.setWidget(container)
         self.tabs.addTab(scroll, "Dossiers")
 
+        icon = self._colored_icon(os.path.join(IMG_DIR, "folder.svg"))
+        self.tabs.addTab(scroll, icon, "Dossiers")
+
     # ------------------------------------------------------------------ #
     #  TAB 2 — Pipeline                                                    #
     # ------------------------------------------------------------------ #
     def _build_tab_pipeline(self):
+        self._update_tab_icons()
         container = QWidget()
         layout = QVBoxLayout(container)
         layout.setSpacing(16)
@@ -138,9 +173,13 @@ class Configuration(QWidget):
         form.addRow("Départements", self.f_departements)
 
         # Qualité
-        self.f_qualite = QComboBox()
-        self.f_qualite.addItems(["0", "5", "10", "20", "30"])
-        form.addRow("Qualité (années)", self.f_qualite)
+        self.f_qualite_c = QComboBox()
+        self.f_qualite_c.addItems(["0", "1", "2", "5", "10", "20", "30"])
+        form.addRow("Qualité (années continue)", self.f_qualite_c)
+
+        self.f_qualite_t = QComboBox()
+        self.f_qualite_t.addItems(["0", "5", "10", "20", "30"])
+        form.addRow("Qualité (années total)", self.f_qualite_t)
 
         # Type de nappe
         type_row = QHBoxLayout()
@@ -165,6 +204,8 @@ class Configuration(QWidget):
 
         layout.addStretch()
         self.tabs.addTab(container, "Pipeline")
+        icon = self._colored_icon(os.path.join(IMG_DIR, "gear.svg"))
+        self.tabs.addTab(container, icon, "Pipeline")
 
     # ------------------------------------------------------------------ #
     #  TAB 3 — Entraînement                                                #
@@ -236,6 +277,8 @@ class Configuration(QWidget):
         layout.addStretch()
         scroll.setWidget(container)
         self.tabs.addTab(scroll, "Fusion & Complétion")
+        icon = self._colored_icon(os.path.join(IMG_DIR, "list-check.svg"))
+        self.tabs.addTab(scroll, icon, "Fusion & Complétion")
 
     # ------------------------------------------------------------------ #
     #  Helpers                                                             #
@@ -302,7 +345,8 @@ class Configuration(QWidget):
 
         p = cfg.get("pipeline", {})
         self.f_departements.setText(", ".join(str(x) for x in p.get("departements", [])))
-        self.f_qualite.setCurrentText(str(p.get("qualite", 30)))
+        self.f_qualite_c.setCurrentText(str(p.get("qualite_continue", 30)))
+        self.f_qualite_t.setCurrentText(str(p.get("qualite_total", 30)))
         types = p.get("type", [])
         self.f_type_reactive.setChecked("reactive" in types)
         self.f_type_inertielle.setChecked("inertielle" in types)
@@ -355,6 +399,98 @@ class Configuration(QWidget):
             from PySide6.QtWidgets import QMessageBox
             QMessageBox.critical(self, "Erreur", f"Impossible de lire le fichier :\n{e}")
 
+    def _build_tab_nettoyage(self):
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.NoFrame)
+        container = QWidget()
+        layout = QVBoxLayout(container)
+        layout.setSpacing(16)
+        layout.setContentsMargins(16, 16, 16, 16)
+
+        self._clean_sections = [
+            ("Extraction",     ["dossier_extraction", "dossier_extraction_tmp"]),
+            ("Fusion",         ["dossier_fusion"]),
+            ("Clusterisation", ["dossier_nappe_inertielle", "dossier_nappe_reactive"]),
+            ("Complétion",     ["dossier_completion", "dossier_completion_inertielle", "dossier_completion_reactive"]),
+            ("Modèles",        ["dossier_model", "dossier_scaler"]),
+            ("Summary",        ["dossier_summary"]),
+        ]
+
+        for label, dossier_keys in self._clean_sections:
+            grp = QGroupBox(label)
+            grp_layout = QVBoxLayout(grp)
+
+            # Affiche les chemins concernés
+            for key in dossier_keys:
+                lbl = QLabel(f"• {key}")
+                lbl.setObjectName("clean_path_label")
+                grp_layout.addWidget(lbl)
+
+            btn = QPushButton(f"Supprimer {label.lower()}")
+            btn.setObjectName("btn_danger")
+            btn.clicked.connect(lambda checked, keys=dossier_keys, lbl=label: self._clean(keys, lbl))
+            grp_layout.addWidget(btn)
+            layout.addWidget(grp)
+
+        layout.addStretch()
+        scroll.setWidget(container)
+        self.tabs.addTab(scroll, "Nettoyage")
+        icon = self._colored_icon(os.path.join(IMG_DIR, "trash.svg"))
+        self.tabs.addTab(scroll, icon, "Nettoyage")
+
+    def _clean(self, dossier_keys: list, label: str):
+        from PySide6.QtWidgets import QMessageBox
+        import shutil
+
+        cfg = {}
+        if os.path.exists(CONFIG_PATH):
+            try:
+                cfg = toml.load(CONFIG_PATH)
+            except Exception:
+                pass
+
+        d = cfg.get("dossier", {})
+
+        paths = [d.get(key, "") for key in dossier_keys if d.get(key, "")]
+        paths = [p for p in paths if p]
+
+        if not paths:
+            QMessageBox.warning(self, "Nettoyage", "Aucun chemin configuré pour cette étape.")
+            return
+
+        msg = "Supprimer les fichiers dans :\n" + "\n".join(f"  • {p}" for p in paths) + "\n\nCette action est irréversible."
+        reply = QMessageBox.question(self, f"Nettoyer — {label}", msg,
+                                    QMessageBox.Yes | QMessageBox.No)
+        if reply != QMessageBox.Yes:
+            return
+
+        errors = []
+        for path in paths:
+            if not os.path.exists(path):
+                continue
+            try:
+                for f in os.listdir(path):
+                    fp = os.path.join(path, f)
+                    if os.path.isfile(fp):
+                        os.remove(fp)
+                    elif os.path.isdir(fp):
+                        shutil.rmtree(fp)
+            except Exception as e:
+                errors.append(f"{path}: {e}")
+
+        if errors:
+            QMessageBox.critical(self, "Erreur", "\n".join(errors))
+        else:
+            QMessageBox.information(self, "Nettoyage", f"{label} nettoyé avec succès.")
+
+        # Notifie les autres pages
+        if os.path.exists(CONFIG_PATH):
+            try:
+                self.config_saved.emit(toml.load(CONFIG_PATH))
+            except Exception:
+                pass
+
     def _save_config(self):
         types = []
         if self.f_type_reactive.isChecked():   types.append("reactive")
@@ -398,15 +534,16 @@ class Configuration(QWidget):
                 "dossier_scaler":               self.f_dossier_scaler.text(),
             },
             "pipeline": {
-                "departements":   deps,
-                "qualite":        int(self.f_qualite.currentText()),
-                "type":           types,
-                "extraction":     self.f_extraction.isChecked(),
-                "fusion":         self.f_fusion.isChecked(),
-                "clusterisation": self.f_clusterisation.isChecked(),
-                "entrainement":   self.f_entrainement.isChecked(),
-                "completion":     self.f_completion.isChecked(),
-                "affichage":      self.f_affichage.isChecked(),
+                "departements":             deps,
+                "qualite_continue":         int(self.f_qualite_c.currentText()),
+                "qualite_total":            int(self.f_qualite_t.currentText()),
+                "type":                     types,
+                "extraction":               self.f_extraction.isChecked(),
+                "fusion":                   self.f_fusion.isChecked(),
+                "clusterisation":           self.f_clusterisation.isChecked(),
+                "entrainement":             self.f_entrainement.isChecked(),
+                "completion":               self.f_completion.isChecked(),
+                "affichage":                self.f_affichage.isChecked(),
             },
             "entrainement_model": {
                 "window_size": self.f_window_size.value(),
