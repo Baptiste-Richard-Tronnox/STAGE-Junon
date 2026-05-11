@@ -16,7 +16,7 @@ added_files = [
     ("ui/assets/departements.geojson",                      "assets"),
 
     # Images SVG
-    ("ui/img/*.svg",                                        "img"),
+    ("ui/img/*",                                        "img"),
 
     # Style global
     ("ui/style/global.qss",                                 "style"),

@@ -33,9 +33,7 @@ class VisualisationCarte(QWidget):
         self._geo_features  = []   # features GeoJSON filtrées par pipeline
         self._dept_actifs   = set()
         self._dept_list     = []   # [{id, name}]
-        self._geojson_path  = os.path.join(
-            os.path.dirname(__file__), "..", "..", "assets", "departements.geojson"
-        )
+        self._geojson_path  = resource_path("assets", "departements.geojson")
         self._setup_ui()
 
     def _setup_ui(self):
@@ -130,8 +128,6 @@ class VisualisationCarte(QWidget):
         """)
 
         # Tout sélectionner / désélectionner
-        action_all = menu.addAction("Tout sélectionner")
-        action_none = menu.addAction("Tout désélectionner")
         menu.addSeparator()
 
         checkboxes = []
@@ -152,16 +148,6 @@ class VisualisationCarte(QWidget):
             wa.setDefaultWidget(w)
             menu.addAction(wa)
             checkboxes.append((did, chk))
-
-        def select_all():
-            for _, chk in checkboxes:
-                chk.setChecked(True)
-        def select_none():
-            for _, chk in checkboxes:
-                chk.setChecked(False)
-
-        action_all.triggered.connect(select_all)
-        action_none.triggered.connect(select_none)
 
         pos = self.btn_filter.mapToGlobal(QPoint(0, self.btn_filter.height()))
         menu.exec(pos)
