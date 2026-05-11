@@ -26,6 +26,23 @@ Construire un **pipeline ETL automatisé** permettant :
 
 ---
 
+## 🛠️ Stack technique
+
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)
+![PySide6](https://img.shields.io/badge/PySide6-6.11.0-41cd52?logo=qt&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.10.0+cu126-ee4c2c?logo=pytorch&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-3.13.2-d00000?logo=keras&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-2.4.3-013243?logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-3.0.1-150458?logo=pandas&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-1.8.0-f7931e?logo=scikitlearn&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-1.17.1-8caae6?logo=scipy&logoColor=white)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-1.1.3-139c5a)
+![Shapely](https://img.shields.io/badge/Shapely-2.1.2-333333)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.8-11557c)
+![Requests](https://img.shields.io/badge/Requests-2.33.0-2b2d42)
+
+---
+
 ## ⚙️ Pipeline global
 
 Le projet est entièrement automatisé via un fichier de configuration `config.toml`.
@@ -157,7 +174,8 @@ methodes = []
 
 [pipeline]
 departements = [45] # liste des departements avec lesquels on veut travailler
-qualite = 30 # nombre d'année de donné que possède châque dataset. valeur : 30, 20, 10, 5, 0
+qualite_continue = 1 # nombre maximum d'année continue
+qualite_total = 5 # nombre d'année de donné que possède châque dataset. valeur : 30, 20, 10, 5, 0
 
 type = [] # type de nappe sur lequel on veut travailler. valeur : ["reactive", "inertielle"]  ou []
 
@@ -195,6 +213,32 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+Voici un bloc prêt à coller dans ton README :
+
+---
+
+## 🚀 Mise en production (`.exe`)
+
+L'interface graphique peut être compilée en exécutable Windows autonome via **PyInstaller**.
+
+### Compilation
+
+Depuis le dossier `src/` :
+
+```bash
+cd src
+pyinstaller app.spec
+```
+
+L'exécutable est généré dans `src/dist/NappesApp/NappesApp.exe`, accompagné de ses dépendances dans le même dossier.
+
+### Points importants
+
+- Le `config.toml` doit être présent à la racine du dossier `NappesApp/` au moment de l'exécution.
+- La carte interactive (page Visualisation) nécessite une **connexion Internet** pour charger les tuiles cartographiques Leaflet et ArcGIS.
+- Les dossiers de données (`data/`, `models/`, `scaler/`) doivent être placés **à côté de l'exécutable**, aux chemins définis dans `config.toml`.
 
 ---
 
