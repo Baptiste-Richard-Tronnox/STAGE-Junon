@@ -11,43 +11,41 @@ block_cipher = None
 #  Données statiques à embarquer                                       #
 # ------------------------------------------------------------------ #
 added_files = [
-    # Config
-    ("config.toml",                                         "."),
 
     # Assets UI
-    ("ui/assets/departements.geojson",                      "ui/assets"),
+    ("ui/assets/departements.geojson",                      "assets"),
 
     # Images SVG
-    ("ui/img/*.svg",                                        "ui/img"),
+    ("ui/img/*.svg",                                        "img"),
 
     # Style global
-    ("ui/style/global.qss",                                 "ui/style"),
+    ("ui/style/global.qss",                                 "style"),
 
     # QSS des composants
-    ("ui/components/extraction_departement/*.qss",          "ui/components/extraction_departement"),
-    ("ui/components/extraction_departement/*.ui",           "ui/components/extraction_departement"),
-    ("ui/components/heatmap/*.qss",                         "ui/components/heatmap"),
-    ("ui/components/heatmap/*.ui",                          "ui/components/heatmap"),
-    ("ui/components/liste_nappes/*.qss",                    "ui/components/liste_nappes"),
-    ("ui/components/liste_nappes/*.ui",                     "ui/components/liste_nappes"),
-    ("ui/components/menu/*.qss",                            "ui/components/menu"),
-    ("ui/components/menu/*.ui",                             "ui/components/menu"),
-    ("ui/components/sidebar/*.qss",                         "ui/components/sidebar"),
-    ("ui/components/trieur/*.qss",                          "ui/components/trieur"),
-    ("ui/components/trieur/*.ui",                           "ui/components/trieur"),
-    ("ui/components/visualisation_carte/*.qss",             "ui/components/visualisation_carte"),
-    ("ui/components/visualisation_donnee/*.qss",            "ui/components/visualisation_donnee"),
+    ("ui/components/extraction_departement/*.qss",          "components/extraction_departement"),
+    ("ui/components/extraction_departement/*.ui",           "components/extraction_departement"),
+    ("ui/components/heatmap/*.qss",                         "components/heatmap"),
+    ("ui/components/heatmap/*.ui",                          "components/heatmap"),
+    ("ui/components/liste_nappes/*.qss",                    "components/liste_nappes"),
+    ("ui/components/liste_nappes/*.ui",                     "components/liste_nappes"),
+    ("ui/components/menu/*.qss",                            "components/menu"),
+    ("ui/components/menu/*.ui",                             "components/menu"),
+    ("ui/components/sidebar/*.qss",                         "components/sidebar"),
+    ("ui/components/trieur/*.qss",                          "components/trieur"),
+    ("ui/components/trieur/*.ui",                           "components/trieur"),
+    ("ui/components/visualisation_carte/*.qss",             "components/visualisation_carte"),
+    ("ui/components/visualisation_donnee/*.qss",            "components/visualisation_donnee"),
 
     # QSS des pages
-    ("ui/pages/clusterisation/*.qss",                       "ui/pages/clusterisation"),
-    ("ui/pages/clusterisation/*.ui",                        "ui/pages/clusterisation"),
-    ("ui/pages/configuration/*.qss",                        "ui/pages/configuration"),
-    ("ui/pages/extraction/*.qss",                           "ui/pages/extraction"),
-    ("ui/pages/extraction/*.ui",                            "ui/pages/extraction"),
-    ("ui/pages/resultat/*.qss",                             "ui/pages/resultat"),
-    ("ui/pages/resultat/*.ui",                              "ui/pages/resultat"),
-    ("ui/pages/visualisation/*.qss",                        "ui/pages/visualisation"),
-    ("ui/pages/visualisation/*.ui",                         "ui/pages/visualisation"),
+    ("ui/pages/clusterisation/*.qss",                       "pages/clusterisation"),
+    ("ui/pages/clusterisation/*.ui",                        "pages/clusterisation"),
+    ("ui/pages/configuration/*.qss",                        "pages/configuration"),
+    ("ui/pages/extraction/*.qss",                           "pages/extraction"),
+    ("ui/pages/extraction/*.ui",                            "pages/extraction"),
+    ("ui/pages/resultat/*.qss",                             "pages/resultat"),
+    ("ui/pages/resultat/*.ui",                              "pages/resultat"),
+    ("ui/pages/visualisation/*.qss",                        "pages/visualisation"),
+    ("ui/pages/visualisation/*.ui",                         "pages/visualisation"),
 ]
 
 # ------------------------------------------------------------------ #
@@ -59,6 +57,9 @@ hidden_imports = [
     "PySide6.QtWidgets",
     "PySide6.QtGui",
     "PySide6.QtWebEngineWidgets",
+    "PySide6.QtCharts",
+    "PySide6.QtWebChannel",
+    "PySide6.QtUiTools",
 
     # Keras / PyTorch
     "keras",
@@ -103,7 +104,7 @@ hidden_imports = [
 ]
 
 # ------------------------------------------------------------------ #
-#  Analyse                                                             #
+#  Analyse                                                           #
 # ------------------------------------------------------------------ #
 a = Analysis(
     ["app.py"],
@@ -130,7 +131,7 @@ a = Analysis(
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 # ------------------------------------------------------------------ #
-#  Exécutable                                                          #
+#  Exécutable                                                        #
 # ------------------------------------------------------------------ #
 exe = EXE(
     pyz,
@@ -147,7 +148,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    # icon="ui/img/geo-alt-fill.ico",  # Décommente si tu as une icône .ico
+    icon="ui/img/icon.ico",
 )
 
 coll = COLLECT(

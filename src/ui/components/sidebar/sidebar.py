@@ -4,9 +4,9 @@ from PySide6.QtGui import QIcon
 import os
 
 from PySide6.QtGui import QPixmap, QPainter, QColor, QIcon
+from ...utils import resource_path
 
-
-IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "img")
+IMG_DIR = resource_path( "img")
 
 class Sidebar(QWidget):
     page_changed = Signal(str)  # Signal émis avec le nom de la page
@@ -101,7 +101,7 @@ class Sidebar(QWidget):
             self._update_icon_color(btn, color)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "sidebar.qss")
+        qss_path = resource_path("components", "sidebar", "sidebar.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

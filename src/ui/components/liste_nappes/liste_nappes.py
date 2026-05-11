@@ -5,6 +5,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, Signal, QSize
 import os
 import pandas as pd
+from ...utils import resource_path
 
 
 class ListeNappes(QWidget):
@@ -143,7 +144,7 @@ class ListeNappes(QWidget):
                 self.nappe_selected.emit(filepath)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "liste_nappes.qss")
+        qss_path = resource_path("components", "liste_nappes", "liste_nappes.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

@@ -6,8 +6,9 @@ import os
 import toml
 
 from ...components.extraction_departement import ExtractionDepartement
+from ...utils import resource_path
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
+CONFIG_PATH = resource_path("..", "config.toml")
 
 
 class Extraction(QWidget):
@@ -72,7 +73,7 @@ class Extraction(QWidget):
             self.dept_widgets[dept] = widget
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "extraction.qss")
+        qss_path = resource_path("pages", "extraction", "extraction.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

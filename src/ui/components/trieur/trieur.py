@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QWidget
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile, QIODevice
 import os
-
+from ...utils import resource_path
 
 class Trieur(QWidget):
     def __init__(self, parent=None):
@@ -13,14 +13,14 @@ class Trieur(QWidget):
 
     def _load_ui(self):
         loader = QUiLoader()
-        ui_path = os.path.join(os.path.dirname(__file__), "trieur.ui")
+        ui_path = resource_path("trieur.ui")
         ui_file = QFile(ui_path)
         if ui_file.open(QIODevice.ReadOnly):
             self.ui = loader.load(ui_file, self)
             ui_file.close()
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "trieur.qss")
+        qss_path = resource_path("trieur.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

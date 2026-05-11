@@ -9,6 +9,7 @@ from PySide6.QtCharts import (
 )
 from PySide6.QtCore import Qt, QMargins
 from PySide6.QtGui import QPainter, QPen, QColor, QLinearGradient, QFont, QGradient
+from ...utils import resource_path
 
 # Couleurs pour les données (Thème Catppuccin)
 SERIES_COLORS = {
@@ -238,7 +239,7 @@ class VisualisationDonnee(QWidget):
 
     def _load_style(self):
         # Charge ton fichier QSS s'il existe
-        qss_path = os.path.join(os.path.dirname(__file__), "visualisation_donnee.qss")
+        qss_path = resource_path("components", "visualisation_donnee", "visualisation_donnee.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

@@ -10,8 +10,9 @@ import toml
 from ...components.liste_nappes import ListeNappes
 from ...components.visualisation_carte import VisualisationCarte
 from ...components.visualisation_donnee import VisualisationDonnee
+from ...utils import resource_path
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
+CONFIG_PATH = resource_path("..", "config.toml")
 
 
 class Visualisation(QWidget):
@@ -66,7 +67,7 @@ class Visualisation(QWidget):
         toggle_layout = QHBoxLayout(toggle_bar)
         toggle_layout.setContentsMargins(16, 8, 16, 8)
         toggle_layout.setSpacing(8)
-        icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "img")
+        icon_path = resource_path("img")
 
         self.btn_carte = QPushButton(" Carte")
         self.btn_donnees = QPushButton(" Données")
@@ -167,7 +168,7 @@ class Visualisation(QWidget):
         self._switch_view(1)  # ← bascule automatiquement sur données au clic carte
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "visualisation.qss")
+        qss_path = resource_path("pages","visualisation","visualisation.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

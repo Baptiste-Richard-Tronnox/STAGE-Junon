@@ -4,7 +4,8 @@ import os
 from .pages import Clusterisation, Configuration, Extraction, Resultat, Visualisation
 from PySide6.QtCore import Signal
 from .components.sidebar import Sidebar
-
+from PySide6.QtGui import QIcon
+from .utils import resource_path
 
 class MainWindow(QMainWindow):
     config_changed = Signal(dict)
@@ -12,12 +13,14 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Application")
+        self.setWindowIcon(QIcon(resource_path("img", "icon.ico")))
         self.resize(1280, 800)
         self._load_global_style()
         self._setup_ui()
 
     def _load_global_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "style", "global.qss")
+        qss_path = resource_path("style", "global.qss")
+        print(f"[QSS] existe={os.path.exists(qss_path)} path={qss_path}")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

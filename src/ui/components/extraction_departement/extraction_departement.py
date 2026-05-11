@@ -6,9 +6,7 @@ from PySide6.QtGui import QPainter, QColor, QConicalGradient, QPen
 import math
 import os
 import sys
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-
+from ...utils import resource_path
 
 class ExtractionWorker(QObject):
     log = Signal(str)
@@ -314,7 +312,7 @@ class ExtractionDepartement(QWidget):
         self.btn_start.setEnabled(True)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "extraction_departement.qss")
+        qss_path = resource_path("components", "extraction_departement", "extraction_departement.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

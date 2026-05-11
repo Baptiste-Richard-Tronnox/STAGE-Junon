@@ -7,9 +7,9 @@ from PySide6.QtCore import Qt, QThread, Signal, QObject, QMimeData, QSize
 from PySide6.QtGui import QDrag
 import os
 import toml
+from ...utils import resource_path
 
-
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
+CONFIG_PATH = resource_path("..", "config.toml")
 
 
 class ClusterisationWorker(QObject):
@@ -522,7 +522,7 @@ class Clusterisation(QWidget):
         src_col._update_count()
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "clusterisation.qss")
+        qss_path = resource_path("pages","clusterisation","clusterisation.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

@@ -7,11 +7,11 @@ from PySide6.QtCore import Qt, Signal, QThread, QObject
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor
 import os
 import toml
+from ...utils import resource_path
 
+CONFIG_PATH = resource_path("..", "config.toml")
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
-
-IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "img")
+IMG_DIR = resource_path("img")
 
 class CleanThread(QThread):
     success = Signal()
@@ -613,7 +613,7 @@ class Configuration(QWidget):
         self.btn_cancel.setVisible(False)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "configuration.qss")
+        qss_path = resource_path("pages", "configuration", "configuration.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

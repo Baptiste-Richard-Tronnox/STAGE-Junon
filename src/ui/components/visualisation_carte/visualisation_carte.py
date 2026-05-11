@@ -10,7 +10,7 @@ from PySide6.QtGui import QIcon
 import os
 import json
 import pandas as pd
-
+from ...utils import resource_path
 
 class WebBridge(QObject):
     nappe_clicked = Signal(str)
@@ -59,7 +59,7 @@ class VisualisationCarte(QWidget):
         self.btn_filter = QPushButton(container)
         self.btn_filter.setObjectName("btn_filter")
 
-        icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "img", "funnel.svg")
+        icon_path = resource_path("img", "funnel.svg")
         self.btn_filter.setIcon(QIcon(icon_path))
         self.btn_filter.setIconSize(QSize(18, 18))
         self.btn_filter.setFixedSize(36, 36)
@@ -188,7 +188,7 @@ class VisualisationCarte(QWidget):
 
         if not os.path.exists(self._geojson_path):
             # Cherche aussi à la racine src
-            alt = os.path.join(os.path.dirname(__file__), "..", "..", "..", "departements.geojson")
+            alt = resource_path("..", "..", "..", "departements.geojson")
             if os.path.exists(alt):
                 self._geojson_path = alt
 
@@ -425,7 +425,7 @@ if (selected) {{
         return str(raw).zfill(2)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "visualisation_carte.qss")
+        qss_path = resource_path("components", "visualisation_carte", "visualisation_carte.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())

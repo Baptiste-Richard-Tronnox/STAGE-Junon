@@ -7,8 +7,9 @@ from PySide6.QtGui import QColor, QPainter, QFont
 import os
 import toml
 import pandas as pd
+from ...utils import resource_path
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "config.toml")
+CONFIG_PATH = resource_path("..", "config.toml")
 
 # ─────────────────────────────────────────────
 #  Worker
@@ -439,7 +440,7 @@ class Resultat(QWidget):
         self.btn_launch.setEnabled(True)
 
     def _load_style(self):
-        qss_path = os.path.join(os.path.dirname(__file__), "resultat.qss")
+        qss_path = resource_path("pages", "resultat", "resultat.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())
