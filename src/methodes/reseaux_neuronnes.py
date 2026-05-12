@@ -2,7 +2,7 @@ import os
 os.environ["KERAS_BACKEND"] = "torch"
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 from keras.models import Sequential
-from keras.layers import Dense, LSTM, Bidirectional, Dropout, Conv1D, MaxPooling1D, Flatten, Conv2D, Reshape
+from keras.layers import Dense, LSTM, Bidirectional, Dropout, Conv1D, MaxPooling2D, Flatten, Conv2D, Reshape
 from keras.callbacks import EarlyStopping, History
 import torch
 import keras
@@ -63,7 +63,7 @@ def fit(
                                  restore_best_weights=True)
     return model.fit(
         X_train, y_train, 
-        epochs=50, 
+        epochs=500, 
         batch_size=256, 
         validation_data=(X_val, y_val),
         callbacks=[callback],
@@ -87,18 +87,18 @@ def lstm_model(
                     activation="tanh",
                     kernel_regularizer=l2(weight_decay)))
     
-    model.add(LSTM(n_units, return_sequences=True))
+    model.add(LSTM(n_units, return_sequences= True))
     model.add(Dropout(dropout))
     
     model.add(LSTM(n_units//2))
     model.add(Dropout(dropout))
     
-    model.add(Dense(n_units, activation="tanh"))
+    model.add(Dense(n_units, activation="tanh",))
     model.add(Dense(input_shape.shape[2]))
 
     optimizer = Adam(learning_rate=learning_rate)
     
-    model.compile(optimizer=optimizer, loss=masked_mse)
+    model.compile(optimizer=optimizer,loss="mse", metrics=['mae'])
     
     return model
 
@@ -132,14 +132,14 @@ def cnn_model(
         kernel_regularizer=l2(weight_decay)
     ))
     
-    model.add(MaxPooling1D(2))
-    model.add(LSTM(128))
+    #model.add(MaxPooling2D(2, padding="same"))
+    model.add(LSTM(128 , return_sequences=True))
     model.add(Dropout(0.3))
 
     model.add(Dense(
         n_units,
         activation="tanh",
-        kernel_regularizer=l2(weight_decay)
+        kernel_regularizer=l2(weight_decay),
     ))
     model.add(Dense(
         n_units // 2,
@@ -151,10 +151,7 @@ def cnn_model(
     
     optimizer = Adam(learning_rate=learning_rate)
     
-    model.compile(
-        optimizer=optimizer,
-        loss=masked_mse
-    )
+    model.compile(optimizer=optimizer,loss="mse", metrics=['mae'])
     
     return model
 
@@ -171,12 +168,12 @@ def bilstm_model(
     model.add(Dense(
         n_units,
         activation="tanh",
-        kernel_regularizer=l2(weight_decay)
+        kernel_regularizer=l2(weight_decay),
     ))
     model.add(Dense(
         n_units * 2,
         activation="tanh",
-        kernel_regularizer=l2(weight_decay)
+        kernel_regularizer=l2(weight_decay),
     ))
     
     model.add(Bidirectional(
@@ -190,7 +187,7 @@ def bilstm_model(
     model.add(Dense(
         n_units,
         activation="tanh",
-        kernel_regularizer=l2(weight_decay)
+        kernel_regularizer=l2(weight_decay),
     ))
     model.add(Dense(
         n_units // 2,
@@ -202,10 +199,7 @@ def bilstm_model(
     
     optimizer = Adam(learning_rate=learning_rate)
     
-    model.compile(
-        optimizer=optimizer,
-        loss=masked_mse
-    )
+    model.compile(optimizer=optimizer,loss="mse", metrics=['mae'])
     
     return model
 
