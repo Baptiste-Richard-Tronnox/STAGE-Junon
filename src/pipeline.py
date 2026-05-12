@@ -268,7 +268,9 @@ if __name__ == "__main__":
             config["dossier"]["dossier_fusion"],
             config["dossier"]["dossier_extraction"],
             config["dossier"],
-            config["fusion"]["PRELIQ_Q"]
+            config["fusion"]["PRELIQ_Q"],
+            nb_an_cons=config["pipeline"]["qualite_continue"],
+            nb_an_tot=config["pipeline"]["qualite_total"]
         )
 
     if config["pipeline"]["clusterisation"]:

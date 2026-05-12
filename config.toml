@@ -55,12 +55,13 @@ methodes = []
 
 [pipeline]
 departements = [45] # liste des departements avec lesquels on veut travailler
-qualite = 30 # nombre d'année de donné que possède châque dataset. valeur : 30, 20, 10, 5, 0
+qualite_continue = 1
+qualite_total = 5
 
 type = [] # type de nappe sur lequel on veut travailler. valeur : ["reactive", "inertielle"]  ou []
 
-extraction = false
-fusion = false
+extraction = true
+fusion = true
 clusterisation = false
 entrainement = false
 completion = false
