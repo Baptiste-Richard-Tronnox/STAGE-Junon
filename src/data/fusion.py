@@ -123,9 +123,9 @@ def process_nappe_file(filepath, meteo, etp, imperm, nb_an_tot=None, nb_an_cons=
     nappe = pd.read_csv(filepath, sep=";")
     nappe_month = preprocess_nappe(nappe)
 
-    if nb_an_tot is not None and classifier_par_duree(nappe_month, col="niveau_nappe_eau")[nb_an_tot]>0:
+    if nb_an_tot is not None and classifier_par_duree(nappe_month, col="niveau_nappe_eau")[nb_an_tot]<0:
         return None
-    if nb_an_cons is not None and classifier_par_consecutif(nappe_month, col="niveau_nappe_eau")[nb_an_cons]>0:
+    if nb_an_cons is not None and classifier_par_consecutif(nappe_month, col="niveau_nappe_eau")[nb_an_cons]<0:
         return None
 
     nappe_month = merge_spatial_data(nappe_month, meteo, etp, imperm)

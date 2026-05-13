@@ -66,7 +66,7 @@ def fusion(output_folder,input_folder, names, methodes, nb_an_tot=None, nb_an_co
         emit.emit(cumulative)
 
     print(f"[CHARGEMENT] {input_folder}/{names["meteo_name_extraction"]}.csv")
-    meteo = load_meteo(f"{input_folder}/{names["meteo_name_extraction"]}.csv", methode=methodes['PRELIQ_Q'])
+    meteo = load_meteo(f"{input_folder}/{names["meteo_name_extraction"]}.csv", methode=methodes)
 
     if emit is not None:
         cumulative += 5
@@ -98,12 +98,13 @@ def fusion(output_folder,input_folder, names, methodes, nb_an_tot=None, nb_an_co
             fichier = futures[future]
             try:
                 future.result()
-                if emit is not None:
-                    cumulative += (80/len(fichiers_csv))
-                    emit.emit(int(cumulative))
                 print(f"[{i}/{len(fichiers_csv)}] {fichier} traité")
             except Exception as e:
                 print(f"[{i}/{len(fichiers_csv)}] {fichier} erreur : {e}")
+            finally :
+                if emit is not None:
+                    cumulative += (80/len(fichiers_csv))
+                    emit.emit(int(cumulative))
 
 def clusterisations(input_folder, dossier_nappe_inertielle, dossier_nappe_reactive):
     dfs = {fichier:charger_fichier(fichier) for fichier in liste_fichiers(input_folder)}

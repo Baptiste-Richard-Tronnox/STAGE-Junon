@@ -335,6 +335,7 @@ class FusionWorker(QObject):
             from pipeline import fusion
 
             d = self.config.get("dossier", {})
+            p = self.config.get("pipeline", {})
             names = {
                 "meteo_name_extraction":          d.get("meteo_name_extraction", "meteo"),
                 "etp_name_extraction":            d.get("etp_name_extraction", "etp"),
@@ -349,9 +350,9 @@ class FusionWorker(QObject):
                 output_folder=d.get("dossier_fusion", "data/fusion"),
                 input_folder=d.get("dossier_extraction", "data/extraction"),
                 names=names,
-                methodes=methodes,
-                nb_an_cons=d.get("qualite_continue"),
-                nb_an_tot=d.get("qualite_total"),
+                methodes=methodes.get("PRELIQ_Q", "sum"),
+                nb_an_cons=p.get("qualite_continue"),
+                nb_an_tot=p.get("qualite_total"),
                 emit=self.progress
             )
             self.finished.emit()
