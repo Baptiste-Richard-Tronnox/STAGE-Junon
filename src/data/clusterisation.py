@@ -2,12 +2,12 @@ import numpy as np
 
 def classifier_nappe_fluctuation(df, col="niveau_nappe_eau"):
 
-    niveau = df[col].dropna()
+    niveau = df[col]
 
     # variations mensuelles
-    variations = niveau.diff().dropna()
+    variations = niveau.diff()
 
-    variation_moy = variations.abs().mean()
+    variation_moy = variations[variations.notna()].abs().mean()
     variabilite = variations.std()
 
     # indice de dynamique

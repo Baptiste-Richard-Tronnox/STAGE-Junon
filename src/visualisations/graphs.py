@@ -18,8 +18,8 @@ def afficher_apprentissage(history):
 
 def affiche_prediction(df, prediction, valeur_de_travail):
     plt.figure(figsize=(12,6))
-    plt.plot(df['time'], prediction, label="Prédiction")
-    plt.plot(df['time'], df[valeur_de_travail], label="Mesure")
+    plt.plot(df['time'], prediction, label="Prédiction", color='orange')
+    plt.plot(df['time'], df[valeur_de_travail], label="Mesure", color='black')
     plt.xlabel("Date")
     plt.ylabel(valeur_de_travail)
     plt.legend()
@@ -302,7 +302,7 @@ def plot_nappes(dossier, valeur_de_travail="niveau_nappe_eau", valeur_de_travail
 
             # Plot
             plt.figure(figsize=(10,5))
-            plt.plot(df['time'], df[valeur_de_travail])
+            plt.plot(df['time'], df[valeur_de_travail], color='#6F9DB9')
             if valeur_de_travail2:
                 plt.plot(df['time'], df[valeur_de_travail2])
             plt.title(f"Nappe : {os.path.basename(fichier)}")

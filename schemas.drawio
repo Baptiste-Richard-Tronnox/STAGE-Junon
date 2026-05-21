@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Vtzk_QEB-AB6CeXuZ3Ts" name="UML - CU">
-        <mxGraphModel dx="1975" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1434" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -335,7 +335,7 @@
                         <mxPoint x="175" y="642" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="15" value="Nettoyer les dossiers" style="ellipse;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneLine=1;shadow=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1trHH5FchxBWGWbB9znn-3">
+                <mxCell id="15" value="Nettoyer les dossiers" style="ellipse;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneLine=1;shadow=1;fontColor=default;labelBackgroundColor=none;" parent="1trHH5FchxBWGWbB9znn-3" vertex="1">
                     <mxGeometry x="40" y="1280" width="140" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="2gOakb3LiVid95FU_kdN-28" value="" style="endArrow=none;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneLine=1;shadow=1;fontColor=default;labelBackgroundColor=none;" parent="1" source="1trHH5FchxBWGWbB9znn-1" target="1trHH5FchxBWGWbB9znn-8" edge="1">
@@ -425,7 +425,7 @@
                         <mxPoint x="265" y="769" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16" value="" style="endArrow=none;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneLine=1;shadow=1;fontColor=default;labelBackgroundColor=none;" edge="1" parent="1" source="1trHH5FchxBWGWbB9znn-1" target="15">
+                <mxCell id="16" value="" style="endArrow=none;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneLine=1;shadow=1;fontColor=default;labelBackgroundColor=none;" parent="1" source="1trHH5FchxBWGWbB9znn-1" target="15" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="100" y="1181" as="sourcePoint"/>
                         <mxPoint x="274" y="1306" as="targetPoint"/>
@@ -435,7 +435,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="5WKBmqfvwc2BAvz-_d8r" name="Schéma ETL">
-        <mxGraphModel dx="1086" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="894" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -485,7 +485,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="RF5Gi27Ii_XIP3wMq0-_" name="schéma src">
-        <mxGraphModel dx="1086" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="894" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -556,7 +556,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="KxyJ-4tKluZJWP8yneAf" name="Navigation">
-        <mxGraphModel dx="1086" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="894" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -690,6 +690,554 @@
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="570" y="365" as="sourcePoint"/>
                         <mxPoint x="620" y="395" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="yxyCOZHCBaHzR-Gi9azn" name="UML">
+        <mxGraphModel dx="3434" dy="2600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QApplication&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ pallette: QPalette&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-330" y="365" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MainWindow&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ config_changed: Signal(dict)&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stack : QStackWidget&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ page : dict(str,Qwidget)&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ navigate_to(self, page_name:str): None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _load_global_style(self): None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _setup_ui(self): None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _on_config_saved(self, cfg:dict): None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="330" width="230" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QMainWindow&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-160" y="170" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-6" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-2" target="E0yv_uXqnVhoN_CLRCYV-5" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="210" y="160" as="sourcePoint"/>
+                        <mxPoint x="370" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-7" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-1" target="E0yv_uXqnVhoN_CLRCYV-2" edge="1">
+                    <mxGeometry x="-1" y="3" relative="1" as="geometry">
+                        <mxPoint x="200" y="190" as="sourcePoint"/>
+                        <mxPoint x="360" y="190" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SideBar&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+ page_changed: Signal(dict)&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+ PAGES : list(tuple(str))&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+ PAGES_BOTTOM : list(tuple(str))&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- _buttons : dict(str, QPushButton)&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, parent=None) : None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ eventFilter(self, obj, event): bool&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _update_icon_color(self, btn:&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;QPushButton&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;, color) : None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _setup_ui(self) : None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _add_button(self, layout, page_name:str, label, icon_file) : None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _on_click(self, page_name:str) : None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _set_active(self, page_name:str) : None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _load_style(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-180" y="620" width="370" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-420" y="670" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-14" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-12" target="E0yv_uXqnVhoN_CLRCYV-13" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="454" y="210" as="sourcePoint"/>
+                        <mxPoint x="389" y="110" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-15" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-2" target="E0yv_uXqnVhoN_CLRCYV-12" edge="1">
+                    <mxGeometry x="-0.5745" y="5" relative="1" as="geometry">
+                        <mxPoint x="290" y="290" as="sourcePoint"/>
+                        <mxPoint x="660" y="390" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-16" value="+ sidebar" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E0yv_uXqnVhoN_CLRCYV-15" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="35" y="-8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-17" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-2" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1">
+                    <mxGeometry x="-1" y="3" relative="1" as="geometry">
+                        <mxPoint x="620" y="290" as="sourcePoint"/>
+                        <mxPoint x="690" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-18" value="+ pages" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E0yv_uXqnVhoN_CLRCYV-17" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="29" y="-16" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-21" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="450" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-24" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1" source="te1019jSt3CKGpIgBvet-32">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="620" y="310" as="sourcePoint"/>
+                        <mxPoint x="910" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-25" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--28" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1000" y="380" as="sourcePoint"/>
+                        <mxPoint x="840" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-26" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--21" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="827" y="640" as="sourcePoint"/>
+                        <mxPoint x="762" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-27" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-33" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="655" y="640" as="sourcePoint"/>
+                        <mxPoint x="590" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-28" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-42" target="E0yv_uXqnVhoN_CLRCYV-21" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="725" y="645" as="sourcePoint"/>
+                        <mxPoint x="660" y="545" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-33" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Configuration&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;u&gt;+ config_saved : Signal(dict)&lt;/u&gt;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ tabs : QTabWidget&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ btn_import : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ btn_cancel : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ btn_save : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ completion_fields : dict&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;- _clean_sections : list(tuple(str,list(str)))&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, parent=None) : None&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_update_tab_icons(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_colored_icon(self, icon_path, color=&quot;#a6adc8&quot;) : QIcon&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_connect_change_signals(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_modified(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_tab_dossiers(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_tab_pipeline(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_tab_entrainement(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_tab_fusion_completion(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_tab_nettoyage(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_line(self, form, label) : QLineEdit&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_checkbox(self, form, label) : QCheckBox&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_path_field(self, form, label) : QLineEdit&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_browse(self, edit: QLineEdit) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_config(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_import_config(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_save_config(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_clean(self, dossier_keys: list, label: str) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_clean_done(self, btn, label, error) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_style(self) : None&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="259" y="680" width="310" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-35" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QThread&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1235" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-36" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;CleanThread&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;&lt;u&gt;+ success : Signal()&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;&lt;u&gt;+ error = Signal(str)&lt;/u&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;+ __init__(self, paths): None&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;+ run(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="1210" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-37" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-36" target="E0yv_uXqnVhoN_CLRCYV-35" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="665" y="650" as="sourcePoint"/>
+                        <mxPoint x="693" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-39" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-33" target="E0yv_uXqnVhoN_CLRCYV-36" edge="1">
+                    <mxGeometry x="-0.5151" y="16" relative="1" as="geometry">
+                        <mxPoint x="620" y="330" as="sourcePoint"/>
+                        <mxPoint x="701" y="460" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-40" value="- _thread" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E0yv_uXqnVhoN_CLRCYV-39" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="23" y="-16" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-42" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Extraction&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict(str : str,dict(...))&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ title : QLabel&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ scroll : QScrollArea&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ cards_container : QWidget&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ cards_layout : QHBoxLayout&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ apply_config(self, cfg: dict) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _load_config_if_exists(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _refresh_departments(self, departements: list) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _load_style(self) : None&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="680" width="310" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-43" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent; text-align: left;&quot;&gt;&lt;b&gt;ExtractionDepartement&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ dept : int&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _thread : QThread&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _worker : QObject&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ speedometer : SpeedometerWidget&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ console : QTextEdit&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ btn_extract : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ btn_use_existing : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ btn_fuse : QPushButton&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _start_extraction(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _on_extraction_done(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _use_existing(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _start_fusion(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _on_fusion_done(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _on_log(self, msg:str) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _on_done(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _on_error(self, msg:str) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _load_style(self) : None&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="950" width="310" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-44" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-42" target="E0yv_uXqnVhoN_CLRCYV-43" edge="1">
+                    <mxGeometry x="-0.3884" y="5" relative="1" as="geometry">
+                        <mxPoint x="540" y="1140" as="sourcePoint"/>
+                        <mxPoint x="612" y="1280" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points">
+                            <mxPoint x="760" y="910"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-45" value="+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;dept_widgets&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E0yv_uXqnVhoN_CLRCYV-44" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="47" y="-6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-46" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QObjet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="1360" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-47" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent; text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;ExtractionWorker&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;u&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ log : Signal(str)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ progress : Signal(int)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ finished : Signal()&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ error : Signal(str)&lt;/span&gt;&lt;/u&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;u&gt;+ STEPS : list(tuple(str, int))&lt;/u&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ dept : int&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, dept:int, config:dict) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;+ run(self) : None&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1480" width="310" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-48" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-47" target="E0yv_uXqnVhoN_CLRCYV-46" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="650" y="1407" as="sourcePoint"/>
+                        <mxPoint x="772" y="1470" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-49" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-43" target="E0yv_uXqnVhoN_CLRCYV-46" edge="1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="769" y="900" as="sourcePoint"/>
+                        <mxPoint x="772" y="960" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-50" value="- _worker" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E0yv_uXqnVhoN_CLRCYV-49" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="23" y="-22" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-51" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="1350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-52" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;FusionWorker&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;u&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ log : Signal(str)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ progress : Signal(int)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ finished : Signal()&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ error : Signal(str)&lt;/span&gt;&lt;/u&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ dept : int&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, dept:int, config:dict) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;+ run(self) : None&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1480" width="310" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-53" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-52" target="E0yv_uXqnVhoN_CLRCYV-46" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1017" y="1610" as="sourcePoint"/>
+                        <mxPoint x="1096" y="1510" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="E0yv_uXqnVhoN_CLRCYV-54" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="E0yv_uXqnVhoN_CLRCYV-43" target="E0yv_uXqnVhoN_CLRCYV-51" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="837" y="650" as="sourcePoint"/>
+                        <mxPoint x="726" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--1" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;ClusterisationWorker&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;u&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ log : Signal(str)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ finished : Signal()&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ error : Signal(str)&lt;/span&gt;&lt;/u&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, dept:int, config:dict) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;+ run(self) : None&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1654" y="760" width="310" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QObjet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="2070" y="780" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--3" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--1" target="hbd8ZKnXjqRC56fQT5n--2" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="905" y="1490" as="sourcePoint"/>
+                        <mxPoint x="835" y="1430" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--4" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;NappePreviewWidget&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ name : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ filepath : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ chart : QChart&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ chart_view : QChartView&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, name:str, filepath:str, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _load_style(self) : None&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="1300" width="360" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--6" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;NappeList&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;u&gt;+ type_changed : Signal(str, str)&lt;/u&gt;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ nappe_type : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ dest_folder : str&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, name:str, filepath:str, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;+&amp;nbsp;dropEvent(self, event) : None&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1860" y="1160" width="360" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QListWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1710" y="1030" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--8" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--6" target="hbd8ZKnXjqRC56fQT5n--7" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1260" y="1303" as="sourcePoint"/>
+                        <mxPoint x="1100" y="1364" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--9" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;ClusterColumn&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;u&gt;+ transfer : Signal(str, str)&lt;/u&gt;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ nappe_type : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ other_type : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ folder : str&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ count_label : QLabel&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ btn_transfer : QPushButton&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(self, nappe_type:str, folder:str, other_type:str, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ load_nappes(self) : None&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;- _update_count(self) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;- _transfer_selected(self) : None&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="938" width="424" height="222" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--10" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--9" target="hbd8ZKnXjqRC56fQT5n--18" edge="1">
+                    <mxGeometry x="-0.8674" y="5" relative="1" as="geometry">
+                        <mxPoint x="1210" y="974" as="sourcePoint"/>
+                        <mxPoint x="1214" y="1034" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--11" value="+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;list_widget&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--10" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-33" y="-39" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--12" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--9" target="E0yv_uXqnVhoN_CLRCYV-51" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1260" y="1303" as="sourcePoint"/>
+                        <mxPoint x="1100" y="1364" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--18" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="1240" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--19" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--4" target="hbd8ZKnXjqRC56fQT5n--18" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1210" y="1388" as="sourcePoint"/>
+                        <mxPoint x="1100" y="1389" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--20" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--7" target="hbd8ZKnXjqRC56fQT5n--18" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1870" y="1200" as="sourcePoint"/>
+                        <mxPoint x="1790" y="1180" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--21" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Clusterisation&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+ config : dict&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;_thread : QThread&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ root_layout : QVBoxLayout&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ launch_zone : QWidget&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ result_zone : QWidget&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ btn_launch : QPushButton&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ log_label : QLabel&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/span&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); background-color: transparent; color: rgb(63, 63, 63);&quot; data-end=&quot;320&quot; data-start=&quot;312&quot;&gt;+ __init__(&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;self, parent=None) : None&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ apply_config(self, cfg:dict) : None&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _load_config_if_exists(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- _check_existing(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_show_results(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_start_clustering(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_done(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_error(self, msg:str) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_transfer(self, filepath:str, target_type:str) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_style(self) : None&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="500" width="424" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--22" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--21" target="hbd8ZKnXjqRC56fQT5n--1" edge="1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="1560" y="920" as="sourcePoint"/>
+                        <mxPoint x="1564" y="990" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--23" value="- _worker" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--22" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-20" y="-22" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--24" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;exitX=0.379;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.379;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="hbd8ZKnXjqRC56fQT5n--21" target="hbd8ZKnXjqRC56fQT5n--9" edge="1">
+                    <mxGeometry x="-0.6815" y="10" relative="1" as="geometry">
+                        <mxPoint x="1524" y="718" as="sourcePoint"/>
+                        <mxPoint x="1161" y="930" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--25" value="-&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;col_inertielle&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--24" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-59" y="-13" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--26" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--21" target="hbd8ZKnXjqRC56fQT5n--9" edge="1">
+                    <mxGeometry x="-0.6393" y="8" relative="1" as="geometry">
+                        <mxPoint x="1261" y="810" as="sourcePoint"/>
+                        <mxPoint x="1230" y="920" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--27" value="-&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;col_reactive&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--26" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="48" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--28" value="&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Visualisation&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 0px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ config : dict&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;btn_carte : QPushButton&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;btn_donnees : QPushButton&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;stack : QStackedWidget&lt;/span&gt;&lt;br&gt;&lt;hr style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;+ __init__(self, parent=None) : None&lt;/div&gt;&lt;div style=&quot;margin-left: 4px; margin-top: 4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ eventFilter(self, obj, event) : bool&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ apply_config(self, cfg:dict) : None&lt;/span&gt;&lt;br&gt;- _update_icon_color(self, btn, color) : None&lt;br&gt;- _setup_ui(self) : None&lt;br&gt;- _on_filter_changed(self, dept_actifs:set, types_actifs:set) : None&lt;br&gt;- _switch_view(self, index:int) : None&lt;br&gt;- load_config_if_exists(self) : None&lt;br&gt;- _on_nappe_selected(self, filepath:str) : None&lt;br&gt;- _load_style(self) : None&lt;/div&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1010" y="120" width="424" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--34" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ListeNappes&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ nappe_selected : Signal(str)&lt;br&gt;&lt;/u&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ search : QLineEdit&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ list_widget : QListWidget&lt;/span&gt;&lt;br&gt;- _all_items : list&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_coords_cache : dict&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, parent=None) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;load_nappes(self, folders:list) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;apply_filter(self, dept_actifs:set, types_actifs:set) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- _setup_ui(self) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_get_dept_id(self, feature:dict) : str&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_render_items(self, items:list) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_filter(self, text:str) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_item_changed(self, current, previous) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_style(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1600" y="-70" width="360" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--35" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--28" target="hbd8ZKnXjqRC56fQT5n--34" edge="1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="1290" y="410" as="sourcePoint"/>
+                        <mxPoint x="1520" y="476" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--36" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;liste_nappes&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--35" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-41" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--37" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WebBridge&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ nappe_clicked : Signal(str)&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ on_nappe_click(self, filepath:str) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="2080" y="530" width="250" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--38" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--37" target="hbd8ZKnXjqRC56fQT5n--2" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1974" y="831" as="sourcePoint"/>
+                        <mxPoint x="2080" y="824" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--39" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;VisualisationCarte&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ nappe_selected : Signal(str)&lt;br&gt;&lt;/u&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+&amp;nbsp;&lt;/u&gt;&lt;u&gt;filter_changed : Signal(set, set)&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ web : QWebEngineView&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;btn_filter : QPushButton&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;channel : QWebChannel&lt;/span&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;- _types_actifs : set&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_nappes_data : list&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_selected : str&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_geo_features : list&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_dept_actifs : set&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_dept_list : list&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_geojson_path : str&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, parent=None) : None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;load_config(self, cfg:dict) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;load_nappes(self, folders:list) : None&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;highlight_nappe(self, filepath:str) : None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;resizeEvent(self, event) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_setup_ui(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_show_filter_menu(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_toggle_type(self, type_val:str, state:int) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_toggle_dept(self, dept_id:str, state:int) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_nappe_clicked(self, filepath:str) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_filter_nappes_by_dept(self, features:list) : list&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_render_map(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_get_dept_id(self, feature:dict) : str&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_style(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="260" width="280" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--40" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--28" target="hbd8ZKnXjqRC56fQT5n--39" edge="1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="1450" y="330" as="sourcePoint"/>
+                        <mxPoint x="1616" y="272" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--41" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;visu_carte&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--40" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-41" y="20" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--42" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" parent="1" source="hbd8ZKnXjqRC56fQT5n--39" target="hbd8ZKnXjqRC56fQT5n--37" edge="1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="2000" y="408" as="sourcePoint"/>
+                        <mxPoint x="2166" y="350" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--43" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251);&quot;&gt;bridge&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="hbd8ZKnXjqRC56fQT5n--42" vertex="1" connectable="0">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="10" y="-35" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--44" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="2140" y="180" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--45" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--39" target="hbd8ZKnXjqRC56fQT5n--44" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="2203" y="630" as="sourcePoint"/>
+                        <mxPoint x="2158" y="790" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="hbd8ZKnXjqRC56fQT5n--46" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1" source="hbd8ZKnXjqRC56fQT5n--34" target="hbd8ZKnXjqRC56fQT5n--44" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1750" y="-90" as="sourcePoint"/>
+                        <mxPoint x="2172" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MiniChart&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ col : str&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;color : QColor&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;lbl : QLabel&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;chart : QChart&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;chart_view : QChartView&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, col:str, color_hex:str, parent=None) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ load(self, df:pd.DataFrame) : None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- _setup_ui(self) : None&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="1620" y="-340" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-2" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-1" target="hbd8ZKnXjqRC56fQT5n--44">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1970" y="136" as="sourcePoint"/>
+                        <mxPoint x="2150" y="196" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;VisualisationDonnee&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ constants_widget : QWidget&lt;br&gt;- _const_labels : dict&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, col:str, parent=None) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ load(self, filepath:str) : None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- _setup_ui(self) : None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;-&amp;nbsp;_load_style(self) : None&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="1170" y="-280" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-5" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-3" target="te1019jSt3CKGpIgBvet-1">
+                    <mxGeometry x="-0.933" y="8" relative="1" as="geometry">
+                        <mxPoint x="1444" y="196" as="sourcePoint"/>
+                        <mxPoint x="1610" y="138" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-6" value="- _charts&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-5">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-41" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-7" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="hbd8ZKnXjqRC56fQT5n--28" target="te1019jSt3CKGpIgBvet-3">
+                    <mxGeometry x="-0.8627" y="15" relative="1" as="geometry">
+                        <mxPoint x="1444" y="196" as="sourcePoint"/>
+                        <mxPoint x="1610" y="138" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-8" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;visu_donnee&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-7">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-56" y="4" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-9" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CompletionWorker&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ log : Signal(str)&lt;br&gt;+ progress : Signal(int, int)&lt;br&gt;+ finished : Signal()&lt;br&gt;+ error : Signal(str)&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ config : dict&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, config:dict) : None&lt;br&gt;+ run(self) : None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="-130" width="240" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QObjet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="-350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-11" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-9" target="te1019jSt3CKGpIgBvet-10">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="720" y="250" as="sourcePoint"/>
+                        <mxPoint x="703" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QLabel&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="-550" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HeatmapCell&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ PALETTE : list(tuple(float&amp;nbsp;&lt;/u&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;| tuple(float)))&lt;/span&gt;&lt;br&gt;+ value : float | None&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, value:float|None, parent=None) : None&lt;br&gt;- _color(self, v:float) : tuple&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="-420" width="310" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-14" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-13" target="te1019jSt3CKGpIgBvet-12">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="760" y="-310" as="sourcePoint"/>
+                        <mxPoint x="862" y="-390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="-125" y="-290" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-17" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-18" target="te1019jSt3CKGpIgBvet-15">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="272" y="50" as="sourcePoint"/>
+                        <mxPoint x="320" y="-20" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-18" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HeatmapWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ variable : str&lt;br&gt;+ df : pd.DataFrame&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ chevron : QLabel&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); margin: 0px 0px 0px 4px;&quot;&gt;- _expanded : bool&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(self, variable:str, df:pd.DataFrame, parent=None) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_setup_ui(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_build_table(self, layout) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_toggle(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="-590" y="-360" width="370" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-19" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="-490" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QVBoxLayout&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="-395" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-21" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-19" target="te1019jSt3CKGpIgBvet-20">
+                    <mxGeometry x="-0.8627" y="15" relative="1" as="geometry">
+                        <mxPoint x="1251" y="130" as="sourcePoint"/>
+                        <mxPoint x="1290" y="-130" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-23" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-20" target="te1019jSt3CKGpIgBvet-13">
+                    <mxGeometry x="-0.8627" y="15" relative="1" as="geometry">
+                        <mxPoint x="510" y="-93" as="sourcePoint"/>
+                        <mxPoint x="600" y="-57" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-24" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-18" target="te1019jSt3CKGpIgBvet-19">
+                    <mxGeometry x="-0.8627" y="15" relative="1" as="geometry">
+                        <mxPoint x="1251" y="130" as="sourcePoint"/>
+                        <mxPoint x="1290" y="-130" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-25" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;body&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-24">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-56" y="4" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-26" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GroupeWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ chevron : QLabel&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;body : QWidget&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;label : str&lt;br&gt;- _expanded : bool&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;__init__(self, label:str, df:pd.DataFrame, variables:list, parent=None) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_setup_ui(self, df, variables) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_toggle(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="-270" width="430" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-27" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QWidget&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="-90" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-28" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-26" target="te1019jSt3CKGpIgBvet-27">
+                    <mxGeometry x="-0.7211" y="-14" relative="1" as="geometry">
+                        <mxPoint x="323" y="50" as="sourcePoint"/>
+                        <mxPoint x="419" y="-90" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-29" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;body&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-28">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="-17" y="-24" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-30" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-27" target="te1019jSt3CKGpIgBvet-18">
+                    <mxGeometry x="-1" y="-8" relative="1" as="geometry">
+                        <mxPoint x="710" y="-25" as="sourcePoint"/>
+                        <mxPoint x="790" y="-25" as="targetPoint"/>
+                        <mxPoint x="3" y="6" as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-31" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-26" target="te1019jSt3CKGpIgBvet-15">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="450" y="80" as="sourcePoint"/>
+                        <mxPoint x="480" y="71" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-32" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Resultat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ result_zone : QWidget&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;launch_zone : QWidget&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;btn_launch : QPushButton&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;log_label : QLabel&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;root : QVBoxLayout&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;scroll : QScrollArea&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;scroll_container : QWidget&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;config : dict&lt;br&gt;- _thread : QThread&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;__init__(self, parent=None) : None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;apply_config(self, cfg:dict) : None&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_setup_ui(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_config_if_exists(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_check_existing(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_show_results(self, summary_path:str, types:list) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_start(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_done(self) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_on_error(self, msg:str) : None&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;-&amp;nbsp;&lt;/span&gt;_load_style(self) : None&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="30" width="330" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-33" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-32" target="te1019jSt3CKGpIgBvet-9">
+                    <mxGeometry x="-1" y="-28" relative="1" as="geometry">
+                        <mxPoint x="771" y="310" as="sourcePoint"/>
+                        <mxPoint x="810" y="50" as="targetPoint"/>
+                        <mxPoint x="-6" y="4" as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-34" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;_worker&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-33">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="23" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-35" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QVBoxLayout&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="50" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-36" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-32" target="te1019jSt3CKGpIgBvet-35">
+                    <mxGeometry x="-0.7211" y="-14" relative="1" as="geometry">
+                        <mxPoint x="110" y="-107" as="sourcePoint"/>
+                        <mxPoint y="-72" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-37" value="&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;result_layout &lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="te1019jSt3CKGpIgBvet-36">
+                    <mxGeometry x="0.875" relative="1" as="geometry">
+                        <mxPoint x="40" y="-16" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="te1019jSt3CKGpIgBvet-39" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;align=left;verticalAlign=bottom;" edge="1" parent="1" source="te1019jSt3CKGpIgBvet-35" target="te1019jSt3CKGpIgBvet-26">
+                    <mxGeometry x="-0.8539" y="15" relative="1" as="geometry">
+                        <mxPoint x="-115" y="-80" as="sourcePoint"/>
+                        <mxPoint x="-267" y="-180" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                        <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
             </root>
