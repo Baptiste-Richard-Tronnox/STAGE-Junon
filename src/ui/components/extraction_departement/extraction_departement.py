@@ -206,9 +206,8 @@ class ExtractionDepartement(QWidget):
         self.btn_extract = QPushButton("Extraire")
         self.btn_extract.setObjectName("btn_extract")
 
-        self.btn_use_existing = QPushButton("📂")
-        self.btn_use_existing.setObjectName("btn_existing")
-        self.btn_use_existing.setFixedSize(28, 28)
+        self.btn_use_existing = QPushButton("Passer l'extraction")
+        self.btn_use_existing.setObjectName("btn_extract")
         self.btn_use_existing.setToolTip("Utiliser les données existantes")
         self.btn_use_existing.clicked.connect(self._use_existing)
 

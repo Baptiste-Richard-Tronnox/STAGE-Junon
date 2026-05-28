@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Application")
+        self.setWindowTitle("Dataminapp")
         self.setWindowIcon(QIcon(resource_path("img", "icon.ico")))
         self.resize(1280, 800)
         self._load_global_style()

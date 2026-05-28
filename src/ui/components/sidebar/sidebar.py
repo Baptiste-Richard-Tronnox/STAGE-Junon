@@ -53,7 +53,7 @@ class Sidebar(QWidget):
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(4)
 
-        title = QLabel("Faut trouver un nom")
+        title = QLabel("Dataminapp")
         title.setObjectName("sidebar_title")
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)

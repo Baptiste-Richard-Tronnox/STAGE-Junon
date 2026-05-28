@@ -26,7 +26,7 @@ class SplashScreen(QSplashScreen):
         painter.setPen(QColor(205, 214, 244))  # #cdd6f4
         font = QFont("Segoe UI", 18, QFont.Weight.Bold)
         painter.setFont(font)
-        painter.drawText(pixmap.rect().adjusted(0, 150, 0, 0), Qt.AlignHCenter, "Nappes App")
+        painter.drawText(pixmap.rect().adjusted(0, 150, 0, 0), Qt.AlignHCenter, "Dataminapp")
 
         # Sous-titre
         painter.setPen(QColor(166, 173, 200))  # #a6adc8
