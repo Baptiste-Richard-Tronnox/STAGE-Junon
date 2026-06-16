@@ -205,7 +205,10 @@ c:\Users\tronn\Documents\STAGE-Junon\venv\Scripts\python.exe src/pipeline.py con
 
 ```bash
 python -m venv venv
+# Pour Windows
 venv\Scripts\activate
+# Pour Linux
+source venv/bin/activate
 ```
 
 ### Installation des dépendances
@@ -214,6 +217,14 @@ venv\Scripts\activate
 pip install torch==2.10.0+cu126 --index-url https://download.pytorch.org/whl/cu126
 
 pip install -r requirements.txt
+```
+
+### Package pour linux
+
+```bash
+sudo apt install libnspr4 libnss3
+sudo apt install libasound2t64
+sudo apt install libxkbfile1
 ```
 
 ---
