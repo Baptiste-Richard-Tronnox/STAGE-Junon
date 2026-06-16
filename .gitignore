@@ -1,4 +1,5 @@
 venv/*
+lenv/*
 data/*
 *.csv.gz
 *.csv

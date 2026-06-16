@@ -211,6 +211,8 @@ venv\Scripts\activate
 ### Installation des dépendances
 
 ```bash
+pip install torch==2.10.0+cu126 --index-url https://download.pytorch.org/whl/cu126
+
 pip install -r requirements.txt
 ```
 

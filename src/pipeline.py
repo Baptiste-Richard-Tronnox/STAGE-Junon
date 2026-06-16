@@ -117,9 +117,9 @@ def clusterisations(input_folder, dossier_nappe_inertielle, dossier_nappe_reacti
 
     for nom, df in dfs.items():
         if classifier_nappe_fluctuation(df)["indice_dynamique"]>0.4 :
-            df.to_csv(os.path.join(dossier_nappe_reactive, nom.split("\\")[1]), sep=";", index=False)
+            df.to_csv(os.path.join(dossier_nappe_reactive, nom.split("\\")[-1]), sep=";", index=False)
         else :
-            df.to_csv(os.path.join(dossier_nappe_inertielle, nom.split("\\")[1]), sep=";", index=False)
+            df.to_csv(os.path.join(dossier_nappe_inertielle, nom.split("\\")[-1]), sep=";", index=False)
 
 
 def methodes_completion(input_folder, ouput_folder, travail, cluster, dossier_model, fichier_scaler, window_size, remove_pct, troue_deb, troue_fin, summary=None):
