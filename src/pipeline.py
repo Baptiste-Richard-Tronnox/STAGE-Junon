@@ -12,6 +12,7 @@ import sys
 import tomllib
 
 import shutil
+import threading
 
 def extraction(output_folder, tmp_folder, departements, names):
     download_communes_csv(output_folder, names["communes_name_extraction"])
@@ -49,62 +50,82 @@ def extraction(output_folder, tmp_folder, departements, names):
         departements=departements
     )
 
+def _init_worker(meteo, etp, imperm):
+    global _worker_meteo, _worker_etp, _worker_imperm
+    _worker_meteo, _worker_etp, _worker_imperm = meteo, etp, imperm
+
 def _traiter_fichier(args):
-    fichier, input_folder, nappe_name, meteo, etp, imperm, nb_an_tot, nb_an_cons, output_folder = args
+    fichier, input_folder, nappe_name, nb_an_tot, nb_an_cons, output_folder = args
     filepath = os.path.join(f"{input_folder}/{nappe_name}", fichier)
-    nappe_month = process_nappe_file(filepath, meteo, etp, imperm, nb_an_tot, nb_an_cons)
+    nappe_month = process_nappe_file(
+        filepath, _worker_meteo, _worker_etp, _worker_imperm, nb_an_tot, nb_an_cons
+    )
     if nappe_month is not None:
         save_output(nappe_month, output_folder)
     return fichier
 
-def fusion(output_folder,input_folder, names, methodes, nb_an_tot=None, nb_an_cons=None, emit=None):
+
+def fusion(output_folder, input_folder, names, methodes, nb_an_tot=None, nb_an_cons=None,
+           emit=None, cancel_event: threading.Event | None = None, executor_box: dict | None = None):
     os.makedirs(output_folder, exist_ok=True)
 
     cumulative = 5
-
     if emit is not None:
         emit.emit(cumulative)
 
-    print(f"[CHARGEMENT] {input_folder}/{names["meteo_name_extraction"]}.csv")
-    meteo = load_meteo(f"{input_folder}/{names["meteo_name_extraction"]}.csv", methode=methodes)
-
+    print(f"[CHARGEMENT] {input_folder}/{names['meteo_name_extraction']}.csv")
+    meteo = load_meteo(f"{input_folder}/{names['meteo_name_extraction']}.csv", methode=methodes)
     if emit is not None:
         cumulative += 5
         emit.emit(cumulative)
 
-    print(f"[CHARGEMENT] {input_folder}/{names["etp_name_extraction"]}.csv")
-    etp = load_etp(f"{input_folder}/{names["etp_name_extraction"]}.parquet")
-
+    print(f"[CHARGEMENT] {input_folder}/{names['etp_name_extraction']}.csv")
+    etp = load_etp(f"{input_folder}/{names['etp_name_extraction']}.parquet")
     if emit is not None:
         cumulative += 5
         emit.emit(cumulative)
 
-    print(f"[CHARGEMENT] {input_folder}/{names["impermeabilite_name_extraction"]}.csv")
-    imperm = load_imperm(f"{input_folder}/{names["impermeabilite_name_extraction"]}.csv")
-
+    print(f"[CHARGEMENT] {input_folder}/{names['impermeabilite_name_extraction']}.csv")
+    imperm = load_imperm(f"{input_folder}/{names['impermeabilite_name_extraction']}.csv")
     if emit is not None:
         cumulative += 5
         emit.emit(cumulative)
-
-    fichiers_csv = [f for f in os.listdir(f"{input_folder}/{names["nappe_name_extraction"]}") if f.endswith(".csv")]
 
     fichiers_csv = [f for f in os.listdir(f"{input_folder}/{names['nappe_name_extraction']}") if f.endswith(".csv")]
-    
-    args_list = [(f, input_folder, names["nappe_name_extraction"], meteo, etp, imperm, nb_an_tot, nb_an_cons, output_folder) for f in fichiers_csv]
-    
-    with ProcessPoolExecutor() as executor:
+    args_list = [(f, input_folder, names["nappe_name_extraction"], nb_an_tot, nb_an_cons, output_folder) for f in fichiers_csv]
+
+    if cancel_event is not None and cancel_event.is_set():
+        return
+
+    executor = ProcessPoolExecutor(
+        max_workers=4,
+        initializer=_init_worker,
+        initargs=(meteo, etp, imperm),
+        max_tasks_per_child=50,
+    )
+    if executor_box is not None:
+        executor_box["executor"] = executor
+
+    try:
         futures = {executor.submit(_traiter_fichier, args): args[0] for args in args_list}
         for i, future in enumerate(as_completed(futures), 1):
+            if cancel_event is not None and cancel_event.is_set():
+                print("[ANNULÉ] arrêt demandé")
+                break
             fichier = futures[future]
             try:
                 future.result()
                 print(f"[{i}/{len(fichiers_csv)}] {fichier} traité")
             except Exception as e:
                 print(f"[{i}/{len(fichiers_csv)}] {fichier} erreur : {e}")
-            finally :
+            finally:
                 if emit is not None:
-                    cumulative += (80/len(fichiers_csv))
+                    cumulative += (80 / len(fichiers_csv))
                     emit.emit(int(cumulative))
+    finally:
+        executor.shutdown(wait=True, cancel_futures=True)
+        if executor_box is not None:
+            executor_box["executor"] = None
 
 def clusterisations(input_folder, dossier_nappe_inertielle, dossier_nappe_reactive):
     dfs = {fichier:charger_fichier(fichier) for fichier in liste_fichiers(input_folder)}

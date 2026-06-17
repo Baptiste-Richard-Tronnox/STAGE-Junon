@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, QThread, Signal, QObject
 from PySide6.QtGui import QPainter, QColor, QConicalGradient, QPen
 import math
-import os
+import threading, os, psutil
 import sys
 from ...utils import resource_path
 
@@ -304,17 +304,27 @@ class ExtractionDepartement(QWidget):
         self.console.append(msg)
 
     def _on_done(self):
-        self.btn_start.setEnabled(True)
+        pass
+        #self.btn_start.setEnabled(True)
 
     def _on_error(self, msg: str):
         self.console.append(f"<span style='color:#f38ba8'>Erreur : {msg}</span>")
-        self.btn_start.setEnabled(True)
+        #self.btn_start.setEnabled(True)
 
     def _load_style(self):
         qss_path = resource_path("components", "extraction_departement", "extraction_departement.qss")
         if os.path.exists(qss_path):
             with open(qss_path, "r") as f:
                 self.setStyleSheet(f.read())
+
+    def cancel_running_work(self):
+        """Demande l'arrêt du worker en cours et attend sa fin."""
+        if self._thread and self._thread.isRunning():
+            if self._worker is not None and hasattr(self._worker, "cancel"):
+                self._worker.cancel()
+            if not self._thread.wait(5000):
+                self._thread.terminate()
+                self._thread.wait(1000)
 
 class FusionWorker(QObject):
     log = Signal(str)
@@ -326,6 +336,8 @@ class FusionWorker(QObject):
         super().__init__()
         self.dept = dept
         self.config = config
+        self._cancel_event = threading.Event()
+        self._executor_box = {"executor": None}
 
     def run(self):
         old_stdout = sys.stdout
@@ -352,16 +364,37 @@ class FusionWorker(QObject):
                 methodes=methodes.get("PRELIQ_Q", "sum"),
                 nb_an_cons=p.get("qualite_continue"),
                 nb_an_tot=p.get("qualite_total"),
-                emit=self.progress
+                emit=self.progress,
+                cancel_event=self._cancel_event,
+                executor_box=self._executor_box,
             )
-            self.finished.emit()
-            self.progress.emit(100)
+            if not self._cancel_event.is_set():
+                self.finished.emit()
+                self.progress.emit(100)
 
         except Exception as e:
             self.error.emit(str(e))
         finally:
             sys.stdout = old_stdout  
 
+    def cancel(self):
+        """Appelé depuis le thread GUI pour stopper la fusion en cours."""
+        self._cancel_event.set()
+        executor = self._executor_box.get("executor")
+        if executor is not None:
+            if hasattr(executor, "kill_workers"):  # Python 3.14+
+                executor.kill_workers()
+            else:
+                executor.shutdown(wait=False, cancel_futures=True)
+        self._force_kill_children()
+
+    def _force_kill_children(self):
+        try:
+            for child in psutil.Process(os.getpid()).children(recursive=True):
+                child.kill()
+        except psutil.NoSuchProcess:
+            pass
+        
 class _LogRedirect:
     """Redirige stdout vers un Signal PySide6."""
     def __init__(self, signal):

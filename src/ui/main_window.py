@@ -63,6 +63,12 @@ class MainWindow(QMainWindow):
         for page in self.pages.values():
             if hasattr(page, "apply_config"):
                 page.apply_config(cfg)
+    
+    def closeEvent(self, event):
+        for page in self.pages.values():
+            if hasattr(page, "cancel_running_work"):
+                page.cancel_running_work()
+        event.accept()
 
     def navigate_to(self, page_name: str):
         if page_name in self.pages:

@@ -60,9 +60,14 @@ class Extraction(QWidget):
         departements = cfg.get("pipeline", {}).get("departements", [])
         self._refresh_departments(departements)
 
+    def cancel_running_work(self):
+        for widget in self.dept_widgets.values():
+            widget.cancel_running_work()
+
     def _refresh_departments(self, departements: list):
         # Supprime les anciennes cartes
         for w in self.dept_widgets.values():
+            w.cancel_running_work() 
             self.cards_layout.removeWidget(w)
             w.deleteLater()
         self.dept_widgets.clear()
