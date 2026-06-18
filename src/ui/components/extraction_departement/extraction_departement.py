@@ -367,6 +367,7 @@ class FusionWorker(QObject):
                 emit=self.progress,
                 cancel_event=self._cancel_event,
                 executor_box=self._executor_box,
+                departements=[self.dept]
             )
             if not self._cancel_event.is_set():
                 self.finished.emit()

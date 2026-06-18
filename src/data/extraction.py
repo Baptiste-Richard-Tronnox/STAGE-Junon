@@ -188,117 +188,120 @@ def process_etp(dataset_id, tmp_folder, output_folder, name, maille_file):
     print(f"✔ {name} : {len(df)} lignes")
 
 def process_meteo(dataset_id, tmp_folder, output_folder, name, departements):
+    for departement in departements :
+        folder = f"{tmp_folder}/{departement}/{name}"
+        ensure_dir(folder)
 
-    folder = f"{tmp_folder}/{name}"
-    ensure_dir(folder)
+        resources = fetch_dataset_resources(dataset_id)
 
-    resources = fetch_dataset_resources(dataset_id)
+        urls = [r["url"] for r in resources for num in [departement] if f"_{num}" in (r["title"] + r["url"]).lower()]
 
-    urls = [r["url"] for r in resources for num in departements if f"_{num}" in (r["title"] + r["url"]).lower()]
+        if not urls:
+            print("❌ Aucun fichier météo")
+            return
 
-    if not urls:
-        print("❌ Aucun fichier météo")
-        return
+        dfs = []
 
-    dfs = []
+        for i, url in enumerate(urls):
+            print(f"[DOWNLOAD] {i+1}/{len(urls)}")
 
-    for i, url in enumerate(urls):
-        print(f"[DOWNLOAD] {i+1}/{len(urls)}")
+            file = os.path.join(folder, f"tmp_{i}.csv.gz")
 
-        file = os.path.join(folder, f"tmp_{i}.csv.gz")
+            r = requests.get(url)
+            r.raise_for_status()
 
-        r = requests.get(url)
-        r.raise_for_status()
+            with open(file, "wb") as f:
+                f.write(r.content)
 
-        with open(file, "wb") as f:
-            f.write(r.content)
+            df = pd.read_csv(file, sep=";", compression="gzip")
+            dfs.append(df)
 
-        df = pd.read_csv(file, sep=";", compression="gzip")
-        dfs.append(df)
+        new_df = pd.concat(dfs, ignore_index=True)
 
-    new_df = pd.concat(dfs, ignore_index=True)
+        out = f"{output_folder}/{departement}/{name}.csv"
 
-    out = f"{output_folder}/{name}.csv"
+        ensure_dir(f"{output_folder}/{departement}")
 
-    if os.path.exists(out):
-        print("📂 Fichier existant détecté, fusion...")
+        if os.path.exists(out):
+            print("📂 Fichier existant détecté, fusion...")
 
-        existing_df = pd.read_csv(out, sep=";")
+            existing_df = pd.read_csv(out, sep=";")
 
-        df = pd.concat([existing_df, new_df], ignore_index=True)
-    else:
-        df = new_df
+            df = pd.concat([existing_df, new_df], ignore_index=True)
+        else:
+            df = new_df
 
-    df.to_csv(out, sep=";", index=False)
+        df.to_csv(out, sep=";", index=False)
 
-    print(f"✔ {name} : {len(df)} lignes")
+        print(f"✔ {name} : {len(df)} lignes")
 
 def process_nappe(output_folder, name, departements):
-    folder = f"{output_folder}/{name}"
-    ensure_dir(folder)
+    for departement2 in departements :
+        folder = f"{output_folder}/{departement2}/{name}"
+        ensure_dir(folder)
 
-    url_stations = "https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/stations"
+        url_stations = "https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/stations"
 
-    codes = []
-    for departement in departements :
-        page = 1
-        # Récupération paginée des stations du département
-        while True:
+        codes = []
+        for departement in [departement2] :
+            page = 1
+            # Récupération paginée des stations du département
+            while True:
+                params = {
+                    "code_departement": departement,
+                    "size": 200,
+                    "page": page
+                }
+                
+                r = requests.get(url_stations, params=params)
+                data = r.json()["data"]
+                
+                if not data:
+                    break
+
+                # Stockage des codes des stations et des coordonnées
+                codes.extend([(s["code_bss"],s["x"],s["y"]) for s in data])
+                print(f"Page {page} : {len(data)} stations")
+                page += 1
+
+        # Suppression des doublons
+        codes = list(set(codes))
+        print(f"Total stations trouvées : {len(codes)}")
+
+        url_chroniques = "https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/chroniques"
+
+        # Téléchargement des chroniques pour chaque station
+        for i, (code, lon, lat) in enumerate(codes):
             params = {
-                "code_departement": departement,
-                "size": 200,
-                "page": page
+                "code_bss": code,
+                "size": 20000
             }
             
-            r = requests.get(url_stations, params=params)
-            data = r.json()["data"]
-            
-            if not data:
-                break
-
-            # Stockage des codes des stations et des coordonnées
-            codes.extend([(s["code_bss"],s["x"],s["y"]) for s in data])
-            print(f"Page {page} : {len(data)} stations")
-            page += 1
-
-    # Suppression des doublons
-    codes = list(set(codes))
-    print(f"Total stations trouvées : {len(codes)}")
-
-    url_chroniques = "https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/chroniques"
-
-    # Téléchargement des chroniques pour chaque station
-    for i, (code, lon, lat) in enumerate(codes):
-        params = {
-            "code_bss": code,
-            "size": 20000
-        }
-        
-        try:
-            r = requests.get(url_chroniques, params=params)
-            data = r.json()["data"]
-            
-            if not data:
-                print(f"[{i+1}/{len(codes)}] {code} : aucune donnée")
-                continue
-            
-            df = pd.DataFrame(data)
-            df["lat"] = lat
-            df["lon"] = lon
-            
-            # Nettoyage du nom pour le fichier
-            safe_code = code.replace("/", "_")
-            file_path = os.path.join(f"{output_folder}/{name}", f"{name}_{safe_code}.csv")
-            
-            df.to_csv(file_path, sep=";", index=False)
-            print(f"[DOWNLOAD][{i+1}/{len(codes)}] {code} : {len(df)} lignes")
-            
-            # Pause pour éviter de surcharger l'API
-            time.sleep(0.2)
-            
-        except Exception as e:
-            print(f"[{i+1}/{len(codes)}] Erreur {code} : {e}")
-    print(f"✔ {name} : {len(codes)} lignes")
+            try:
+                r = requests.get(url_chroniques, params=params)
+                data = r.json()["data"]
+                
+                if not data:
+                    print(f"[{i+1}/{len(codes)}] {code} : aucune donnée")
+                    continue
+                
+                df = pd.DataFrame(data)
+                df["lat"] = lat
+                df["lon"] = lon
+                
+                # Nettoyage du nom pour le fichier
+                safe_code = code.replace("/", "_")
+                file_path = os.path.join(f"{output_folder}/{departement2}/{name}", f"{name}_{safe_code}.csv")
+                
+                df.to_csv(file_path, sep=";", index=False)
+                print(f"[DOWNLOAD][{i+1}/{len(codes)}] {code} : {len(df)} lignes")
+                
+                # Pause pour éviter de surcharger l'API
+                time.sleep(0.2)
+                
+            except Exception as e:
+                print(f"[{i+1}/{len(codes)}] Erreur {code} : {e}")
+        print(f"✔ {name} : {len(codes)} lignes")
 
 
 def download_communes_csv(dest_folder: str, name: str = "communes"):

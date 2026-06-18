@@ -42,6 +42,7 @@ def classifier_par_duree(df, col="niveau_nappe_eau"):
     for _, group in grouped:
         duree = (group["time"].max() - group["time"].min()).days / 365.25
         
+        
         if duree > 30:
             resultats[30] += 1
         if duree > 20:
@@ -52,6 +53,7 @@ def classifier_par_duree(df, col="niveau_nappe_eau"):
             resultats[5] += 1
         resultats[0] += 1
 
+    print(resultats)
     return resultats
 
 def classifier_par_consecutif(df, col="niveau_nappe_eau"):
@@ -88,19 +90,19 @@ def classifier_par_consecutif(df, col="niveau_nappe_eau"):
             else:
                 current_streak = 1
 
-        if max_streak > 30:
+        if max_streak > 30*12:
             resultats[30] += 1
-        if max_streak > 20:
+        if max_streak > 20*12:
             resultats[20] += 1
-        if max_streak > 10:
+        if max_streak > 10*12:
             resultats[10] += 1
-        if max_streak > 5:
+        if max_streak > 5*12:
             resultats[5] += 1
-        if max_streak > 2:
+        if max_streak > 2*12:
             resultats[2] += 1
-        if max_streak > 1:
+        if max_streak > 1*12:
             resultats[1] += 1
         resultats[0] += 1
 
-    
+    print(resultats)
     return resultats

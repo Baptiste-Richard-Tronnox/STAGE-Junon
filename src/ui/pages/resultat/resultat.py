@@ -213,9 +213,19 @@ class HeatmapWidget(QWidget):
                 grid.addWidget(HeatmapCell(val), i + 1, j + 1)
 
         # Scroll horizontal si beaucoup de datasets
-        grid_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        scroll = QScrollArea()
+        scroll.setWidget(grid_widget)
+        scroll.setWidgetResizable(False)
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        scroll.setFrameShape(QFrame.NoFrame)
+        scroll.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+
+        # Hauteur fixée au contenu pour ne pas avoir de scroll vertical parasite
         grid_widget.adjustSize()
-        layout.addWidget(grid_widget)
+        scroll.setFixedHeight(grid_widget.sizeHint().height() + 12)  # +12 pour la scrollbar
+
+        layout.addWidget(scroll)
 
     def _toggle(self):
         self._expanded = not self._expanded

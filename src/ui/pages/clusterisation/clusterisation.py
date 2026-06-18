@@ -387,9 +387,23 @@ class Clusterisation(QWidget):
         self.root_layout.setContentsMargins(24, 24, 24, 24)
         self.root_layout.setSpacing(16)
 
+        header = QWidget()
+        header_layout = QHBoxLayout(header)
+        header_layout.setContentsMargins(0, 0, 0, 0)
+
         title = QLabel("Clusterisation")
         title.setObjectName("page_title")
-        self.root_layout.addWidget(title)
+        header_layout.addWidget(title)
+
+        header_layout.addStretch()
+
+        self.btn_relaunch = QPushButton("Relancer la clusterisation")
+        self.btn_relaunch.setObjectName("btn_relaunch")
+        self.btn_relaunch.setVisible(False)
+        self.btn_relaunch.clicked.connect(self._relaunch_clustering)
+        header_layout.addWidget(self.btn_relaunch)
+
+        self.root_layout.addWidget(header)
 
         # Zone bouton lancement
         self.launch_zone = QWidget()
@@ -435,6 +449,13 @@ class Clusterisation(QWidget):
         rz.addWidget(self.col_reactive)
         self.root_layout.addWidget(self.result_zone)
 
+    def _relaunch_clustering(self):
+        self.result_zone.setVisible(False)
+        self.btn_relaunch.setVisible(False)
+        self.log_label.setText("")
+        self.btn_launch.setEnabled(True)
+        self.launch_zone.setVisible(True)
+
     def _load_config_if_exists(self):
         if os.path.exists(CONFIG_PATH):
             try:
@@ -471,6 +492,7 @@ class Clusterisation(QWidget):
     def _show_results(self):
         self.launch_zone.setVisible(False)
         self.result_zone.setVisible(True)
+        self.btn_relaunch.setVisible(True)
         self.col_inertielle.load_nappes()
         self.col_reactive.load_nappes()
 
