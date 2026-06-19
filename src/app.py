@@ -3,6 +3,7 @@ import os
 from PySide6.QtWidgets import QApplication, QSplashScreen, QLabel, QVBoxLayout, QWidget
 from PySide6.QtGui import QIcon, QPalette, QColor, QPixmap, QPainter, QFont
 from PySide6.QtCore import Qt, QTimer
+from multiprocessing import freeze_support
 from ui import MainWindow, resource_path
 
 
@@ -41,6 +42,8 @@ class SplashScreen(QSplashScreen):
 
 
 def main():
+    freeze_support()
+
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
     app.setWindowIcon(QIcon(resource_path("img", "icon.ico")))

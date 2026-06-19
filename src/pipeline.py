@@ -7,6 +7,7 @@ from methodes import *
 from evaluations import *
 
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing as mp
 
 import sys
 import tomllib
@@ -98,10 +99,12 @@ def fusion(output_folder, input_folder, names, methodes, nb_an_tot=None, nb_an_c
         if cancel_event is not None and cancel_event.is_set():
             return
 
+        ctx = mp.get_context("spawn")
         executor = ProcessPoolExecutor(
             max_workers=4,
             initializer=_init_worker,
-            initargs=(meteo, etp, imperm)
+            initargs=(meteo, etp, imperm),
+            mp_context=ctx
         )
         
         if executor_box is not None:
@@ -153,7 +156,8 @@ def methodes_completion(input_folder, ouput_folder, travail, cluster, dossier_mo
             if "/" in m:
                 model[valeur_de_travail][m] = load_model(f"{dossier_model}/{m}.keras", custom_objects={'masked_mse': masked_mse})
 
-    mon_scaler = joblib.load(f"{fichier_scaler}/scaler.save")
+    if model[valeur_de_travail] != {} :
+        mon_scaler = joblib.load(f"{fichier_scaler}/scaler.save")
 
     df_all = charger_dossier(input_folder)
 

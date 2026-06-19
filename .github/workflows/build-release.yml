@@ -1,0 +1,179 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"   # Se déclenche sur les tags de la forme v1.0.0, v2.1.3, etc.
+
+permissions:
+  contents: write  # Nécessaire pour créer la release GitHub
+
+jobs:
+
+  # ─────────────────────────────────────────────
+  #  BUILD WINDOWS
+  # ─────────────────────────────────────────────
+  build-windows:
+    name: 🪟 Build Windows
+    runs-on: windows-latest
+
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: 📦 Installer PyTorch (CPU-only)
+        run: |
+          pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: 📦 Installer les dépendances
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: 🔨 Compiler avec PyInstaller
+        working-directory: src
+        run: |
+          pyinstaller app.spec
+
+      - name: 📁 Copier config.toml dans le dossier de sortie
+        # Le config.toml doit être présent à côté de l'exe au lancement
+        shell: pwsh
+        run: |
+          Copy-Item -Path "config.toml" -Destination "src/dist/NappesApp/config.toml"
+
+      - name: 🗜️ Zipper l'exécutable Windows
+        shell: pwsh
+        run: |
+          Compress-Archive `
+            -Path "src/dist/NappesApp/*" `
+            -DestinationPath "NappesApp-windows-${{ github.ref_name }}.zip"
+
+      - name: ⬆️ Upload artifact Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: NappesApp-windows
+          path: NappesApp-windows-${{ github.ref_name }}.zip
+          retention-days: 1
+
+  # ─────────────────────────────────────────────
+  #  BUILD LINUX
+  # ─────────────────────────────────────────────
+  build-linux:
+    name: 🐧 Build Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: 🔧 Installer les dépendances système (PySide6 / QtWebEngine)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            libnspr4 libnss3 \
+            libasound2t64 \
+            libxkbfile1 \
+            libglib2.0-0 \
+            libgl1-mesa-glx \
+            libegl1 \
+            libxcb-cursor0 \
+            libxcb-icccm4 \
+            libxcb-image0 \
+            libxcb-keysyms1 \
+            libxcb-randr0 \
+            libxcb-render-util0 \
+            libxcb-shape0 \
+            libxcb-xinerama0 \
+            libxcb-xkb1 \
+            libxkbcommon-x11-0 \
+            libdbus-1-3
+
+      - name: 📦 Installer PyTorch (CPU-only)
+        run: |
+          pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+
+      - name: 📦 Installer les dépendances
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: 🔨 Compiler avec PyInstaller
+        working-directory: src
+        # Sur Linux, PyInstaller génère un binaire sans extension
+        run: |
+          pyinstaller app.spec
+
+      - name: 📁 Copier config.toml dans le dossier de sortie
+        run: |
+          cp config.toml src/dist/NappesApp/config.toml
+
+      - name: 🗜️ Zipper l'exécutable Linux
+        run: |
+          cd src/dist
+          zip -r "../../NappesApp-linux-${{ github.ref_name }}.zip" NappesApp/
+
+      - name: ⬆️ Upload artifact Linux
+        uses: actions/upload-artifact@v4
+        with:
+          name: NappesApp-linux
+          path: NappesApp-linux-${{ github.ref_name }}.zip
+          retention-days: 1
+
+  # ─────────────────────────────────────────────
+  #  RELEASE GITHUB
+  # ─────────────────────────────────────────────
+  release:
+    name: 🚀 Créer la release GitHub
+    runs-on: ubuntu-latest
+    needs: [build-windows, build-linux]  # Attend que les deux builds soient finis
+
+    steps:
+      - name: 📥 Récupérer les artifacts Windows
+        uses: actions/download-artifact@v4
+        with:
+          name: NappesApp-windows
+          path: ./release
+
+      - name: 📥 Récupérer les artifacts Linux
+        uses: actions/download-artifact@v4
+        with:
+          name: NappesApp-linux
+          path: ./release
+
+      - name: 🏷️ Créer la release et uploader les zips
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "NappesApp ${{ github.ref_name }}"
+          tag_name: ${{ github.ref_name }}
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-rc') || contains(github.ref_name, '-beta') || contains(github.ref_name, '-alpha') }}
+          body: |
+            ## 📦 NappesApp ${{ github.ref_name }}
+
+            ### Téléchargements
+            | Plateforme | Fichier |
+            |---|---|
+            | 🪟 Windows | `NappesApp-windows-${{ github.ref_name }}.zip` |
+            | 🐧 Linux   | `NappesApp-linux-${{ github.ref_name }}.zip` |
+
+            ### Installation
+            1. Télécharger et extraire le zip correspondant à votre OS
+            2. Vérifier que `config.toml` est bien présent à la racine du dossier extrait
+            3. Lancer `NappesApp.exe` (Windows) ou `./NappesApp` (Linux)
+
+            > ⚠️ La page Visualisation nécessite une connexion Internet pour les tuiles cartographiques.
+          files: |
+            ./release/NappesApp-windows-${{ github.ref_name }}.zip
+            ./release/NappesApp-linux-${{ github.ref_name }}.zip

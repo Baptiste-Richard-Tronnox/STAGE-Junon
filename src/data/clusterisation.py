@@ -53,7 +53,6 @@ def classifier_par_duree(df, col="niveau_nappe_eau"):
             resultats[5] += 1
         resultats[0] += 1
 
-    print(resultats)
     return resultats
 
 def classifier_par_consecutif(df, col="niveau_nappe_eau"):
@@ -104,5 +103,4 @@ def classifier_par_consecutif(df, col="niveau_nappe_eau"):
             resultats[1] += 1
         resultats[0] += 1
 
-    print(resultats)
     return resultats
