@@ -46,12 +46,12 @@ methodes = [ "knn_nappe", "lineaire",]
 
 [completion.PRELIQ_Q]
 realiser = true
-methodes = [ "lineaire", "cubique", "global/CNN", "lineaire",]
+methodes = [ "lineaire", "cubique", "lineaire",]
 
 [completion.T_Q]
 realiser = true
-methodes = [ "lineaire", "cubique", "global/CNN", "lineaire",]
+methodes = [ "lineaire", "cubique", "lineaire",]
 
 [completion.ETP_Q]
 realiser = true
-methodes = [ "lineaire", "cubique", "global/CNN", "lineaire",]
+methodes = [ "lineaire", "cubique", "lineaire",]
