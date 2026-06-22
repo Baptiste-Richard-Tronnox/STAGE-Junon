@@ -308,7 +308,7 @@ def knn_nappe(
     df_all: pd.DataFrame,
     valeur_de_travail: str = "niveau_nappe_eau",
     n_top: int = 3
-):
+) -> np.ndarray :
     """Impute une nappe sur la base d'un plus proche voisin choisi à partir de leur signature
 
     Args:

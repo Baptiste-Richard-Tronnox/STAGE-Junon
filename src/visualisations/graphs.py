@@ -314,3 +314,33 @@ def plot_nappes(dossier, valeur_de_travail="niveau_nappe_eau", valeur_de_travail
 
         except Exception as e:
             print(f"Erreur avec {fichier} : {e}")
+
+def plot_dataset_predictions(df, y_full, y_missing, y_pred_dict, ds_name, method_name):
+    """
+    Affiche les courbes pour un dataset :
+    - données réelles
+    - données avec trous
+    - données interpolées pour une méthode donnée
+    """
+    plt.figure(figsize=(12, 6))
+
+    # Courbe prédite pour la méthode choisie
+
+    dico = {
+        "PRELIQ_Q" : "le total d'eau de pluie",
+        "niveau_nappe_eau" : "le niveau d'eau de la nappe",
+        "T_Q" : "la température"
+    }
+
+
+    plt.plot(df['time'], y_full, linestyle='--', label='Données manquantes', color='black', linewidth=2, alpha= 0.4)
+    plt.plot(df['time'], y_missing, label='Données réelles', color='black', linewidth=2)
+    plt.plot(df['time'], y_pred_dict, label=f'Prédiction ({method_name})', color='orange', linewidth=2, alpha= 0.8)
+
+    plt.xlabel('Time')
+    plt.ylabel('Valeur')
+    plt.title(f"Interpolation sur {dico[ds_name]} - Méthode : {method_name}")
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.3)
+    plt.tight_layout()
+    plt.show()
